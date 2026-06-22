@@ -1,0 +1,6 @@
+---
+title: "Home"
+page-layout: full
+---
+
+- Big hero banner of images?
