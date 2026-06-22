@@ -27,7 +27,7 @@ jobs:
         run: sudo apt install cmake make libuv1-dev zlib1g-dev pandoc libabsl-dev libssl-dev libgdal-dev libgeos-dev libproj-dev libsqlite3-dev libudunits2-dev
 
       - name: Install R dependencies
-        run: install.packages(c("dplyr", "here", "mapgl" "readr", "sf"))
+        run: install.packages(c("dplyr", "here", "mapgl", "readr", "sf"))
         shell: Rscript {0}
 
       - name: Set up Quarto
