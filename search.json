@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Big hero banner of images?"
+  },
+  {
     "objectID": "map/index.html",
     "href": "map/index.html",
     "title": "Map",
@@ -19,12 +26,5 @@
     "title": "Archive",
     "section": "",
     "text": "Photograph collections go here?"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
-    "section": "",
-    "text": "Big hero banner of images?"
   }
 ]

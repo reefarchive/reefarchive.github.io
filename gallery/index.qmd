@@ -1,6 +1,0 @@
----
-title: "Archive"
-page-layout: full
----
-
-- Photograph collections go here?

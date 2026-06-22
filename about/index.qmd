@@ -1,7 +1,0 @@
----
-title: "About"
-page-layout: full
----
-
-- Aim
-- Team
