@@ -3,13 +3,15 @@ title: ""
 page-layout: custom
 ---
 
-```{r}
+```{r map}
 #| echo: false
 #| message: false
 #| warning: false
 library(mapgl)
 library(dplyr)
+library(sf)
 library(readr)
+library(here)
 
 metadata_path <- here::here("data", "metadata.csv")
 if (file.exists(metadata_path)) {
@@ -23,72 +25,64 @@ if (file.exists(metadata_path)) {
   )
 }
 
-# ── Convert to sf for mapgl ────────────────────────────────────────────────
-library(sf)
-if (nrow(photos) > 0) {
-  photos_sf <- st_as_sf(photos, coords = c("lon", "lat"), crs = 4326)
-} else {
-  photos_sf <- st_sf(
-    id = character(0), title = character(0), date_approx = character(0),
-    reef = character(0), thumbnail_url = character(0), page_url = character(0),
-    geometry = st_sfc(crs = 4326)
-  )
-}
+photos_sf <- st_as_sf(photos, coords = c("lon", "lat"), crs = 4326)
 
-# ── Render map ─────────────────────────────────────────────────────────────
+photos_sf <- photos_sf |>
+  mutate(popup_html = paste0(
+    '<div style="font-family:Georgia,serif;min-width:180px;">',
+    ifelse(!is.na(thumbnail_url) & nchar(thumbnail_url) > 0,
+      paste0('<img src="', thumbnail_url, '" style="width:180px;aspect-ratio:4/3;object-fit:cover;display:block;margin-bottom:0.5rem;">'), ""),
+    '<span style="font-family:monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#2A7F7F;">', date_approx, '</span>',
+    '<p style="margin:0.25rem 0 0.1rem;font-weight:600;font-size:0.9rem;color:#0D1B2A;">',
+    ifelse(!is.na(page_url), paste0('<a href="', page_url, '" target="_blank" style="color:#2A7F7F;">', title, '</a>'), title),
+    '</p>',
+    '<p style="margin:0;font-size:0.8rem;color:#5a6a7a;font-style:italic;">', ifelse(!is.na(reef), reef, ""), '</p>',
+    '</div>'
+  ))
+
 m <- maplibre(
-  style  = carto_style("positron"),
-  center = c(118, 5),
-  zoom   = 3,
-  width = "100vw"
+  style = carto_style("positron"),
+  center = c(-77.4, 18.2),
+  zoom = 2,
+  width = "100vw",
+  height = "80vh"
 )
 
-if (nrow(photos_sf) > 0) {
-  m <- m |>
-    add_source(
-      id      = "photos",
-      data    = photos_sf,
-      cluster = TRUE,
-      cluster_max_zoom = 14,
-      cluster_radius   = 50
+m <- m |>
+  add_source(
+    id = "photos",
+    data = photos_sf,
+    cluster = TRUE,
+    cluster_max_zoom = 14,
+    cluster_radius = 50
     ) |>
-    # ── Cluster circles ──────────────────────────────────────────────────
-    add_circle_layer(
-      id           = "clusters",
-      source       = "photos",
-      filter       = list("has", "point_count"),
+  add_circle_layer(
+      id = "clusters",
+      source = photos_sf,
+      filter = list("has", "point_count"),
       circle_color = "#2A7F7F",
-      circle_radius = list(
-        "step",
-        list("get", "point_count"),
-        15,   # radius when count < 10
-        10,  20,  # radius when count < 50
-        50,  25   # radius when count >= 50
-      ),
-      circle_opacity = 0.8
+      circle_opacity = 1
     ) |>
     # ── Cluster count labels ─────────────────────────────────────────────
     add_symbol_layer(
-      id        = "cluster-count",
-      source    = "photos",
-      filter    = list("has", "point_count"),
+      id = "cluster-count",
+      source = photos_sf,
+      filter = list("has", "point_count"),
       text_field = list("get", "point_count_abbreviated"),
       text_color = "#ffffff",
-      text_size  = 13
+      text_size = 13
     ) |>
     # ── Individual points ────────────────────────────────────────────────
     add_circle_layer(
-      id              = "unclustered",
-      source          = "photos",
-      filter          = list("!", list("has", "point_count")),
-      circle_color    = "#2A7F7F",
-      circle_radius   = 6,
-      circle_opacity  = 0.7,
+      id = "unclustered",
+      source = photos_sf,
+      filter = list("!", list("has", "point_count")),
+      circle_color = "#2A7F7F",
+      circle_radius = 6,
+      circle_opacity = 0.7,
       circle_stroke_width = 1.5,
       circle_stroke_color = "#2A7F7F",
-      popup = "title"   # simple fallback; see note below
+      popup = "popup_html"
     )
-}
-
 m
 ```
