@@ -1,6 +1,94 @@
 ---
-title: "Map"
-page-layout: full
+title: ""
+page-layout: custom
 ---
 
-- Interactive goes here
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(mapgl)
+library(dplyr)
+library(readr)
+
+metadata_path <- here::here("data", "metadata.csv")
+if (file.exists(metadata_path)) {
+  photos <- read_csv(metadata_path, show_col_types = FALSE) |>
+    filter(!is.na(lat), !is.na(lon))
+} else {
+  photos <- tibble(
+    id = character(0), title = character(0), date_approx = character(0),
+    reef = character(0), lat = numeric(0), lon = numeric(0),
+    thumbnail_url = character(0), page_url = character(0)
+  )
+}
+
+# ── Convert to sf for mapgl ────────────────────────────────────────────────
+library(sf)
+if (nrow(photos) > 0) {
+  photos_sf <- st_as_sf(photos, coords = c("lon", "lat"), crs = 4326)
+} else {
+  photos_sf <- st_sf(
+    id = character(0), title = character(0), date_approx = character(0),
+    reef = character(0), thumbnail_url = character(0), page_url = character(0),
+    geometry = st_sfc(crs = 4326)
+  )
+}
+
+# ── Render map ─────────────────────────────────────────────────────────────
+m <- maplibre(
+  style  = carto_style("positron"),
+  center = c(118, 5),
+  zoom   = 3,
+  width = "100vw"
+)
+
+if (nrow(photos_sf) > 0) {
+  m <- m |>
+    add_source(
+      id      = "photos",
+      data    = photos_sf,
+      cluster = TRUE,
+      cluster_max_zoom = 14,
+      cluster_radius   = 50
+    ) |>
+    # ── Cluster circles ──────────────────────────────────────────────────
+    add_circle_layer(
+      id           = "clusters",
+      source       = "photos",
+      filter       = list("has", "point_count"),
+      circle_color = "#2A7F7F",
+      circle_radius = list(
+        "step",
+        list("get", "point_count"),
+        15,   # radius when count < 10
+        10,  20,  # radius when count < 50
+        50,  25   # radius when count >= 50
+      ),
+      circle_opacity = 0.8
+    ) |>
+    # ── Cluster count labels ─────────────────────────────────────────────
+    add_symbol_layer(
+      id        = "cluster-count",
+      source    = "photos",
+      filter    = list("has", "point_count"),
+      text_field = list("get", "point_count_abbreviated"),
+      text_color = "#ffffff",
+      text_size  = 13
+    ) |>
+    # ── Individual points ────────────────────────────────────────────────
+    add_circle_layer(
+      id              = "unclustered",
+      source          = "photos",
+      filter          = list("!", list("has", "point_count")),
+      circle_color    = "#2A7F7F",
+      circle_radius   = 6,
+      circle_opacity  = 0.7,
+      circle_stroke_width = 1.5,
+      circle_stroke_color = "#2A7F7F",
+      popup = "title"   # simple fallback; see note below
+    )
+}
+
+m
+```
