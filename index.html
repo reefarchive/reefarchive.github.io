@@ -133,15 +133,13 @@ ul.task-list li input[type="checkbox"] {
 <style>
 /* Remove Quarto's default body padding */
 html {
-  height: 100%;
+  height: 100vh;
 }
 
 body {
   margin: 0;
   padding: 0;
   height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 #quarto-content,
@@ -160,6 +158,7 @@ main.content {
                     url("images/hero.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   width: 100%;
   flex: 1; /* fill whatever space is left */
   display: flex;
@@ -172,6 +171,7 @@ main.content {
   color: var(--offwhite);
   text-align: center;
   padding: 2rem;
+  margin: 2rem;
   border-radius: 10px;
   width: 50vw;
 }
