@@ -1,5 +1,5 @@
 ---
-title: ""
+pagetitle: "Atlas"
 page-layout: custom
 ---
 
@@ -34,7 +34,7 @@ photos_sf <- photos_sf |>
       paste0('<img src="', thumbnail_url, '" style="width:180px;aspect-ratio:4/3;object-fit:cover;display:block;margin-bottom:0.5rem;">'), ""),
     '<span style="font-family:monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#2A7F7F;">', date_approx, '</span>',
     '<p style="margin:0.25rem 0 0.1rem;font-weight:600;font-size:0.9rem;color:#0D1B2A;">',
-    ifelse(!is.na(page_url), paste0('<a href="', page_url, '" target="_blank" style="color:#2A7F7F;">', title, '</a>'), title),
+    ifelse(!is.na(collection_url), paste0('<a href="', collection_url, '" target="_blank" style="color:#2A7F7F;">', title, '</a>'), title),
     '</p>',
     '<p style="margin:0;font-size:0.8rem;color:#5a6a7a;font-style:italic;">', ifelse(!is.na(reef), reef, ""), '</p>',
     '</div>'
@@ -49,6 +49,7 @@ m <- maplibre(
 )
 
 m <- m |>
+  add_navigation_control(position = "top-right") |>
   add_source(
     id = "photos",
     data = photos_sf,

@@ -1,0 +1,12 @@
+---
+pagetitle: "Collections"
+listing:
+  contents: "*/index.qmd"
+  type: grid
+  grid-columns: 3
+  image-height: "220px"
+  fields: [image, title, date, description]
+  sort: "date desc"
+  categories: true
+page-layout: article
+---
