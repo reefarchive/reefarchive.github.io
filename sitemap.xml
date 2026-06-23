@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.reefarchive.org/index.html</loc>
-    <lastmod>2026-06-23T10:56:45.100Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.reefarchive.org/map/index.html</loc>
-    <lastmod>2026-06-23T10:56:45.100Z</lastmod>
+    <lastmod>2026-06-23T11:15:26.738Z</lastmod>
   </url>
   <url>
     <loc>https://www.reefarchive.org/about/index.html</loc>
-    <lastmod>2026-06-23T10:56:45.100Z</lastmod>
+    <lastmod>2026-06-23T11:15:26.737Z</lastmod>
   </url>
   <url>
-    <loc>https://www.reefarchive.org/gallery/index.html</loc>
-    <lastmod>2026-06-23T10:56:45.100Z</lastmod>
+    <loc>https://www.reefarchive.org/collections/discovery-bay/index.html</loc>
+    <lastmod>2026-06-23T11:15:26.738Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.reefarchive.org/collections/index.html</loc>
+    <lastmod>2026-06-23T11:15:26.738Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.reefarchive.org/atlas/index.html</loc>
+    <lastmod>2026-06-23T11:15:26.737Z</lastmod>
   </url>
 </urlset>
