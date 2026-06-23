@@ -66,6 +66,34 @@ a {
   border-bottom: 2px solid #1d5e5e;
 }
 
+/* ── Atlas ─────────────────────────────────────── */ 
+
+.atlas-layout {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.atlas-map {
+  flex: 1;
+  min-width: 0;
+}
+
+#photo-sidebar {
+  width: 350px;
+  flex-shrink: 0;
+
+  border-left: 2px solid #ddd;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  position: sticky;
+  top: 1rem;
+
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+}
+
 /* ── Hero (home page) ─────────────────────────────────────── */
 
 
