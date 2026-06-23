@@ -1,6 +1,114 @@
 ---
-title: "Home"
-page-layout: full
+pagetitle: "Welcome"
+page-layout: custom
+toc: false
 ---
 
-- Big hero banner of images?
+```{=html}
+<style>
+/* Remove Quarto's default body padding */
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#quarto-content,
+#quarto-document-content,
+main.content {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+  flex: 1; /* take up all remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-banner {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
+                    url("../images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  flex: 1; /* fill whatever space is left */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  background: rgba(0,0,0,0.7);
+  color: var(--offwhite);
+  text-align: center;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 50vw;
+}
+</style>
+```
+
+::: {.hero-banner}
+<div class="hero-content">
+
+## Preserving the visual history of coral reefs
+
+Reef Archive is an open repository of historical reef photographs that aims to preserve, document, and share the visual history of coral reefs. By bringing together images from diverse sources, the archive helps reveal how reefs have changed over time and ensures these records remain accessible for future generations.
+
+[Browse the Archive](collections/){.btn-primary}
+
+
+```{r counts}
+#| echo: false
+#| warning: false
+n <- length(read.csv(file = "data/metadata.csv")$id)
+```
+
+```{=html}
+<div class="stats-section">
+  <div class="stat-item">
+    <div class="stat-value">
+      <span class="stat-number" data-target=`r paste0(n)`>0</span>
+    </div>
+    <span class="stat-label">Photographs Saved</span>
+  </div>
+</div>
+
+<script>
+(function () {
+  function animateCounter(el) {
+    var target = parseInt(el.dataset.target, 10);
+    var duration = 800;
+    var start = performance.now();
+    function update(now) {
+      var progress = Math.min((now - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target).toLocaleString();
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  document.querySelectorAll('.stat-number').forEach(function (el) {
+    observer.observe(el);
+  });
+})();
+</script>
+```
+
+</div>
+:::
