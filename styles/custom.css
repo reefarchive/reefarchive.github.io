@@ -94,7 +94,47 @@ a {
   overflow-y: auto;
 }
 
-/* ── Hero (home page) ─────────────────────────────────────── */
+/* ── Home ─────────────────────────────────────── */
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #C8B89A;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.stats-section {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  margin-top: 0rem;
+  padding-top: 0rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.1rem;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-label {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
 
 
 /* ── Footer ───────────────────────────────────────────────── */
@@ -134,10 +174,3 @@ a {
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
-
-@media (max-width: 768px) {
-  .rr-hero { padding: 4rem 1.25rem 3rem; }
-  .rr-hero-stats { gap: 1.5rem; }
-  .rr-section { padding: 3rem 1.25rem; }
-  .rr-gallery-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
-}

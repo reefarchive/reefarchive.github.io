@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Home – The Reef Archive</title>
+<title>Welcome – Reef Archive</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles/custom.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">The Reef Archive</span>
+    <span class="navbar-title">Reef Archive</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -105,6 +105,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
+    <a class="nav-link" href="mailto:info@reefarchive.org"> <i class="bi bi-envelope-fill" role="img" aria-label="Contact">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/reefarchive/reefarchive.github.io"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
@@ -117,39 +122,109 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Home</h1>
+
+
+
+<style>
+/* Remove Quarto's default body padding */
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#quarto-content,
+#quarto-document-content,
+main.content {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+  flex: 1; /* take up all remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-banner {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
+                    url("../images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  flex: 1; /* fill whatever space is left */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  background: rgba(0,0,0,0.7);
+  color: var(--offwhite);
+  text-align: center;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 50vw;
+}
+</style>
+<div class="hero-banner">
+<section id="preserving-the-visual-history-of-coral-reefs" class="level2 hero-content">
+<h2 data-anchor-id="preserving-the-visual-history-of-coral-reefs">Preserving the visual history of coral reefs</h2>
+<p>Reef Archive is an open repository of historical reef photographs that aims to preserve, document, and share the visual history of coral reefs. By bringing together images from diverse sources, the archive helps reveal how reefs have changed over time and ensures these records remain accessible for future generations.</p>
+<p><a href="collections/" class="btn-primary">Browse the Archive</a></p>
+<div class="stats-section">
+  <div class="stat-item">
+    <div class="stat-value">
+      <span class="stat-number" data-target="1">0</span>
+    </div>
+    <span class="stat-label">Photographs Saved</span>
+  </div>
+</div>
+
+<script>
+(function () {
+  function animateCounter(el) {
+    var target = parseInt(el.dataset.target, 10);
+    var duration = 800;
+    var start = performance.now();
+    function update(now) {
+      var progress = Math.min((now - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target).toLocaleString();
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  document.querySelectorAll('.stat-number').forEach(function (el) {
+    observer.observe(el);
+  });
+})();
+</script>
+</section>
 </div>
 
 
 
-<div class="quarto-title-meta column-page">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<ul>
-<li>Big hero banner of images?</li>
-</ul>
-
-
-
-</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
