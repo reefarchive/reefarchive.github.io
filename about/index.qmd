@@ -1,7 +1,47 @@
 ---
-title: "About"
+pagetitle: "About"
 page-layout: full
 ---
 
-- Aim
-- Team
+# About
+
+In progress....
+
+# Meet the Team
+
+::: {.columns}
+
+::: {.column width="30%"}
+
+![](../images/lewis-jones.png){.img-fluid}
+
+**Lewis A. Jones**  
+University College London
+
+:::
+
+::: {.column width="30%"}
+
+![](../images/kenneth-johnson.png){.img-fluid}
+
+**Kenneth Johnson**  
+Natural History Museum, UK
+
+:::
+
+::: {.column width="30%"}
+
+![](../images/florence-okoye.png){.img-fluid}
+
+**Florence Okoye**  
+Natural History Museum, UK
+
+:::
+
+:::
+
+# Contact Us
+
+Reach out if you have any questions, would like more information, or would like to contribute to Reef Archive.
+
+Email: [info@reefarchive.org](mailto:info@reefarchive.org)

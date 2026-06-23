@@ -12,7 +12,7 @@ website:
   navbar:
     background: "#0D1B2A"
     foreground: "#F7F4EE"
-    favicon: images/favicon.png
+    favicon: "images/favicon.png"
     logo-alt: "Reef Archive"
     search: false
     right:

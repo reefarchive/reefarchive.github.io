@@ -66,6 +66,26 @@ a {
   border-bottom: 2px solid #1d5e5e;
 }
 
+/* ── About ─────────────────────────────────────── */ 
+
+.columns > .column {
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  margin: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.columns img {
+  border-radius: 50%;
+  width: 70%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
 /* ── Atlas ─────────────────────────────────────── */ 
 
 .atlas-layout {
@@ -79,7 +99,7 @@ a {
   min-width: 0;
 }
 
-#photo-sidebar {
+.sidebar {
   width: 350px;
   flex-shrink: 0;
 
@@ -92,6 +112,22 @@ a {
 
   max-height: calc(100vh - 2rem);
   overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 320px;
+    height: 100vh;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
 }
 
 /* ── Home ─────────────────────────────────────── */
