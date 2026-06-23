@@ -3,7 +3,7 @@ project:
   output-dir: _site
 
 resources:
-  - resources/*
+  - images/*
 
 website:
   title: "Reef Archive"
