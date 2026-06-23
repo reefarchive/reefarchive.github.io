@@ -12,6 +12,7 @@ website:
   navbar:
     background: "#0D1B2A"
     foreground: "#F7F4EE"
+    favicon: images/favicon.png
     logo-alt: "Reef Archive"
     search: false
     right:
@@ -34,7 +35,7 @@ website:
     left: |
       A living record of historical coral reef photography
     right: |
-      Built with [Quarto](https://quarto.org) · Images Archived via [Internet Archive](https://archive.org)
+      Built with [Quarto](https://quarto.org) · Images Archived via [Internet Archive](https://archive.org/details/@reef_archive/uploads)
 
 format:
   html:
