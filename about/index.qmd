@@ -1,44 +1,25 @@
 ---
 pagetitle: "About"
-page-layout: full
+page-layout: article
 ---
 
-# About
+# About The Reef Archive
 
-In progress....
+Coral reefs have changed profoundly over the past half-century: bleached, eroded, and diminished in ways that are now so familiar they risk becoming the new normal. Yet scattered across attics, filing cabinets, and forgotten hard drives lies a remarkable counter-record: thousands of underwater photographs taken by pioneering reef scientists in the 1950s through to the 1990s, documenting reefs as they once were.
+
+These images are primary scientific evidence. They offer site-specific, empirical glimpses of reef communities before the widespread declines of the 1980s and before long-term monitoring programmes existed to capture them. They show what "healthy" actually looked like — the benthic assemblages, coral cover, and structural complexity that managers and policy makers now struggle to define without a reliable baseline. Without such baselines, conservation targets risk being anchored to an already-degraded present.
+
+But this record is disappearing. Ageing film degrades. Scientists retire or pass away. Institutional memory fades. These archives — invaluable precisely because they are irreplaceable — have no natural home, and so they are quietly being lost.
+
+**The Reef Archive** exists to change that.
+
+We are building an open-access, community-curated repository for legacy reef imagery and its associated metadata (precise locations, dates, depths, photographers, and ecological context) hosted both here and on the [Internet Archive](https://archive.org). Our goal is to rescue this visual record, make it freely accessible to researchers, conservationists, and the public, and preserve it for the generations of scientists who will need it most.
 
 # Meet the Team
 
-::: {.columns}
-
-::: {.column width="30%"}
-
-![](../images/lewis-jones.png){.img-fluid}
-
-**Lewis A. Jones**  
-University College London
-
-:::
-
-::: {.column width="30%"}
-
-![](../images/kenneth-johnson.png){.img-fluid}
-
-**Kenneth Johnson**  
-Natural History Museum, UK
-
-:::
-
-::: {.column width="30%"}
-
-![](../images/florence-okoye.png){.img-fluid}
-
-**Florence Okoye**  
-Natural History Museum, UK
-
-:::
-
-:::
+- Lewis A. Jones, University College London, UK
+- Kenneth Johnson, Natural History Museum, UK
+- Florence Okoye, Natural History Museum, UK
 
 # Contact Us
 

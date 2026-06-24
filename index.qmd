@@ -48,7 +48,7 @@ main.content {
   padding: 2rem;
   margin: 2rem;
   border-radius: 10px;
-  width: 50vw;
+  width: 70vw;
 }
 </style>
 ```
@@ -60,7 +60,7 @@ main.content {
 
 Reef Archive is an open repository of historical reef photographs that aims to preserve, document, and share the visual history of coral reefs. By bringing together images from diverse sources, the archive helps reveal how reefs have changed over time and ensures these records remain accessible for future generations.
 
-[Browse the Archive](collections/){.btn-primary}
+[Browse the Collections](collections/){.btn-primary}
 
 
 ```{r counts}
