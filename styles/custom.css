@@ -99,7 +99,7 @@ a {
   min-width: 0;
 }
 
-.sidebar {
+.photo-sidebar {
   width: 350px;
   flex-shrink: 0;
 
@@ -115,7 +115,7 @@ a {
 }
 
 @media (max-width: 768px) {
-  .sidebar {
+  .photo-sidebar {
     position: fixed;
     top: 0;
     left: -320px;
@@ -125,7 +125,7 @@ a {
     z-index: 1000;
   }
 
-  .sidebar.open {
+  .photo-sidebar.open {
     left: 0;
   }
 }

@@ -56,9 +56,9 @@ main.content {
 ::: {.hero-banner}
 <div class="hero-content">
 
-## Preserving the visual history of coral reefs
+# Preserving the visual history of coral reefs
 
-Reef Archive is an open repository of historical reef photographs that aims to preserve, document, and share the visual history of coral reefs. By bringing together images from diverse sources, the archive helps reveal how reefs have changed over time and ensures these records remain accessible for future generations.
+The Reef Archive is an open repository of historical reef photographs that aims to preserve, document, and share the visual history of coral reefs. By bringing together images from diverse sources, the archive helps reveal how reefs have changed over time and ensures these records remain accessible for future generations.
 
 [Browse the Collections](collections/){.btn-primary}
 

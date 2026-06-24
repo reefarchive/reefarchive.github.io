@@ -6,7 +6,7 @@ resources:
   - images/*
 
 website:
-  title: The Reef Archive"
+  title: "The Reef Archive"
   description: "An archive of historical coral reef photography"
   
   navbar:

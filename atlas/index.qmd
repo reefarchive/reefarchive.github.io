@@ -177,7 +177,7 @@ m
 
   </div>
 
-  <aside class="sidebar">
+  <aside class="photo-sidebar">
     <div id="photo-sidebar-content">Click a point to view details.</div>
   </aside>
 
