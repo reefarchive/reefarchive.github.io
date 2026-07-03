@@ -1,1 +1,1 @@
-Sitemap: https://www.reefarchive.org/sitemap.xml
+Sitemap: https://reefarchive.org/sitemap.xml

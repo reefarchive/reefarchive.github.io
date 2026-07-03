@@ -27,12 +27,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./_img/favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-0db66c32e16a2551af7299a43e6f95a1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e8526f3140c74c57e4edfcea8d7fa604.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-4e8b694677ff075428ca3d7d6fa4b881.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,6 +74,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="styles/custom.css">
+<meta property="og:title" content="The Reef Archive">
+<meta property="og:description" content="An archive of historical coral reef photography">
+<meta property="og:image" content="https://reefarchive.org/_img/hero.jpg">
+<meta property="og:site_name" content="The Reef Archive">
+<meta property="og:locale" content="en_GB">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -155,7 +160,7 @@ main.content {
 
 .hero-banner {
   background-image: linear-gradient(rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.25)),
-                    url("images/hero.jpg");
+                    url("_img/hero.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -298,7 +303,7 @@ main.content {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/www\.reefarchive\.org");
+        var filterRegex = new RegExp("https:\/\/reefarchive\.org");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -637,10 +642,10 @@ main.content {
 <p>A living record of historical coral reef photography</p>
 </div>   
     <div class="nav-footer-center">
-      &nbsp;
-    </div>
+<p><a href="mailto:info@reefarchive.org">Contact us</a></p>
+</div>
     <div class="nav-footer-right">
-<p>Built with <a href="https://quarto.org">Quarto</a> · Images Archived via <a href="https://archive.org/details/@reef_archive/uploads">Internet Archive</a></p>
+<p><a href="https://quarto.org">Built with Quarto</a> · <a href="https://archive.org/details/@reef_archive/uploads">Images Archived via Internet Archive</a></p>
 </div>
   </div>
 </footer>
