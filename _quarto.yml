@@ -3,17 +3,25 @@ project:
   output-dir: _site
 
 resources:
-  - images/*
+  - _img/*
 
 website:
   title: "The Reef Archive"
   description: "An archive of historical coral reef photography"
+  repo-url: https://github.com/reefarchive/reefarchive.github.io
+  site-url: https://reefarchive.org
+  favicon: _img/favicon.png
+  open-graph:
+    title: The Reef Archive
+    description: An archive of historical coral reef photography
+    image: _img/hero.jpg
+    locale: en_GB
   
   navbar:
+    pinned: true
     background: "#0D1B2A"
     foreground: "#F7F4EE"
-    favicon: "images/favicon.ico"
-    logo-alt: "The Reef Archive"
+    favicon: _img/favicon.png
     search: false
     right:
       - text: "Collections"
@@ -34,8 +42,10 @@ website:
     foreground: "#C8B89A"
     left: |
       A living record of historical coral reef photography
+    center: |
+      [Contact us](mailto:info@reefarchive.org)
     right: |
-      Built with [Quarto](https://quarto.org) · Images Archived via [Internet Archive](https://archive.org/details/@reef_archive/uploads)
+      [Built with Quarto](https://quarto.org) · [Images Archived via Internet Archive](https://archive.org/details/@reef_archive/uploads)
 
 format:
   html:

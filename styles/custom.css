@@ -68,66 +68,43 @@ a {
 
 /* ── About ─────────────────────────────────────── */ 
 
-.columns > .column {
-  background: white;
-  border-radius: 10px;
-  text-align: center;
-  margin: 1rem;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.columns img {
-  border-radius: 50%;
-  width: 70%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 1rem;
-}
-
 /* ── Atlas ─────────────────────────────────────── */ 
 
 .atlas-layout {
   display: flex;
   gap: 1.5rem;
   align-items: flex-start;
+  position: relative;
 }
-
 .atlas-map {
   flex: 1;
   min-width: 0;
+  height: 80vh; /* or whatever height you want, set here instead */
 }
-
+.atlas-map > *,
+.atlas-map .cell-output-display,
+.atlas-map figure,
+.atlas-map .html-widget {
+  margin: 0 !important;
+}
 .photo-sidebar {
   width: 350px;
   flex-shrink: 0;
-
-  border-left: 2px solid #ddd;
   padding-left: 1rem;
+  padding-top: 1rem;
   padding-right: 1rem;
 
-  position: sticky;
-  top: 1rem;
-
-  max-height: calc(100vh - 2rem);
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  height: 90%;
+  transform: translateY(-50%);
   overflow-y: auto;
-}
 
-@media (max-width: 768px) {
-  .photo-sidebar {
-    position: fixed;
-    top: 0;
-    left: -320px;
-    width: 320px;
-    height: 100vh;
-    transition: left 0.3s ease;
-    z-index: 1000;
-  }
-
-  .photo-sidebar.open {
-    left: 0;
-  }
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  z-index: 10;
 }
 
 /* ── Home ─────────────────────────────────────── */
@@ -208,5 +185,3 @@ a {
   padding: 0.2rem 0.55rem;
   margin: 0.15rem;
 }
-
-/* ── Responsive ───────────────────────────────────────────── */
