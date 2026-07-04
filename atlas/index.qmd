@@ -9,6 +9,13 @@ page-layout: custom
 #quarto-content > * {
   padding-top: 0px;
 }
+
+#quarto-content.page-navbar {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 163px); /* explicit height, not min-height */
+}
+
 </style>
 ```
 
@@ -55,23 +62,10 @@ photos_sf <- photos_sf |>
   mutate(
     popup_html = paste0(
       '<div style="font-family:Georgia,serif;min-width:180px;">',
-
-      ifelse(
-        !is.na(thumbnail_url) & nchar(thumbnail_url) > 0,
-        paste0(
-          '<img src="',
-          thumbnail_url,
-          '" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;margin-bottom:0.5rem;">'
-        ),
-        ""
-      ),
-
       '<span style="font-family:monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#2A7F7F;">',
       date_approx,
       '</span>',
-
       '<p style="margin:0.25rem 0 0.1rem;font-weight:600;font-size:0.9rem;color:#0D1B2A;">',
-
       ifelse(
         !is.na(collection_url),
         paste0(
@@ -83,13 +77,30 @@ photos_sf <- photos_sf |>
         ),
         title
       ),
-
       '</p>',
-
       '<p style="margin:0;font-size:0.8rem;color:#5a6a7a;font-style:italic;">',
       ifelse(!is.na(reef), reef, ""),
       '</p>',
-
+      ifelse(
+        !is.na(thumbnail_url) & nchar(thumbnail_url) > 0,
+        {
+          img_tag <- paste0(
+            '<img src="',
+            thumbnail_url,
+            '" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;margin-top:0.5rem;">'
+          )
+          if (!is.na(collection_url)) {
+            paste0(
+              '<a href="', collection_url, '" target="_blank">',
+              img_tag,
+              '</a>'
+            )
+          } else {
+            img_tag
+          }
+        },
+        ""
+      ),
       '</div>'
     )
   )
