@@ -78,13 +78,11 @@ a {
   flex: 1;
   min-height: 0;
 }
-
 .atlas-map {
   flex: 1;
   min-width: 0;
   height: 100%;
 }
-
 .atlas-map > *,
 .atlas-map .cell-output-display,
 .atlas-map figure,
@@ -99,18 +97,45 @@ a {
   padding-left: 1rem;
   padding-top: 1rem;
   padding-right: 1rem;
-
   position: absolute;
   top: 50%;
   right: 1rem;
   height: 90%;
   transform: translateY(-50%);
   overflow-y: auto;
-
   background: #fff;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   z-index: 10;
+  transition: opacity 0.2s ease;
+}
+
+/* hidden by default until a point is selected */
+.photo-sidebar {
+  display: none;
+}
+.photo-sidebar.visible {
+  display: block;
+}
+
+.photo-sidebar-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.photo-sidebar-close {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  color: #5a6a7a;
+  cursor: pointer;
+}
+.photo-sidebar-close:hover {
+  color: #0D1B2A;
 }
 
 @media (max-width: 768px) {
@@ -122,7 +147,7 @@ a {
     top: auto;
     width: auto;
     max-height: 30vh;
-    transform: translateY(-40%);
+    transform: none;
     padding: 1rem;
     background: #fff;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
