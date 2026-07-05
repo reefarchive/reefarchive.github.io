@@ -21,7 +21,7 @@ page-layout: custom
 
 <div class="atlas-layout">
 
-  <div class="atlas-map">
+<div class="atlas-map">
 
 ```{r map}
 #| echo: false
@@ -177,6 +177,8 @@ m <- m |>
 
           document.getElementById('photo-sidebar-content').innerHTML =
             props.popup_html;
+
+          document.querySelector('.photo-sidebar').classList.add('visible');
         });
 
         map.on('mouseenter', 'unclustered', function() {
@@ -196,10 +198,25 @@ m <- m |>
 m
 ```
 
-  </div>
+</div>
 
-  <aside class="photo-sidebar">
-    <div id="photo-sidebar-content">Click a point to view details.</div>
-  </aside>
+<aside class="photo-sidebar">
+
+<div class="photo-sidebar-header">
+<button class="photo-sidebar-close" onclick="closePhotoSidebar()">✕</button>
+</div>
+
+<div id="photo-sidebar-content">Click a point to view details.</div>
+
+</aside>
 
 </div>
+
+```{=html}
+<script>
+function closePhotoSidebar() {
+  document.querySelector('.photo-sidebar').classList.remove('visible');
+  document.getElementById('photo-sidebar-content').innerHTML = 'Click a point to view details.';
+}
+</script>
+```
