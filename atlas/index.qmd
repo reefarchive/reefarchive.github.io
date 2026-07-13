@@ -36,25 +36,22 @@ library(htmlwidgets)
 
 metadata_path <- here::here("data", "metadata.csv")
 
-if (file.exists(metadata_path)) {
-  photos <- read_csv(metadata_path, show_col_types = FALSE) |>
-    filter(!is.na(lat), !is.na(lon))
-} else {
-  photos <- tibble(
-    id = character(0),
-    title = character(0),
-    date_approx = character(0),
-    reef = character(0),
-    lat = numeric(0),
-    lon = numeric(0),
-    thumbnail_url = character(0),
-    collection_url = character(0)
-  )
-}
+photos <- read_csv(metadata_path, show_col_types = FALSE) |>
+  filter(!is.na(GPSLatitude), !is.na(GPSLongitude)) |>
+  mutate(GPSLongitude = if_else(GPSLongitudeRef == "W", GPSLongitude * -1, GPSLongitude),
+         GPSLatitude = if_else(GPSLatitudeRef == "S", GPSLatitude * -1, GPSLatitude)
+         ) |>
+  select(CollectionName, DateTimeOriginal, LocationShownSublocation,
+         GPSLongitude, GPSLatitude) |>
+  # Should not be hardcoded longterm
+  mutate(Year = 1966,
+         CollectionURL = "../collections/discovery-bay-1966",
+         ThumbnailURL = "../collections/discovery-bay-1966/img/db037.webp") |>
+  distinct()
 
 photos_sf <- st_as_sf(
-  photos,
-  coords = c("lon", "lat"),
+  photos[1, ],
+  coords = c("GPSLongitude", "GPSLatitude"),
   crs = 4326
 )
 
@@ -63,35 +60,35 @@ photos_sf <- photos_sf |>
     popup_html = paste0(
       '<div style="font-family:Georgia,serif;min-width:180px;">',
       '<span style="font-family:monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#2A7F7F;">',
-      date_approx,
+      Year,
       '</span>',
       '<p style="margin:0.25rem 0 0.1rem;font-weight:600;font-size:0.9rem;color:#0D1B2A;">',
       ifelse(
-        !is.na(collection_url),
+        !is.na(CollectionURL),
         paste0(
           '<a href="',
-          collection_url,
+          CollectionURL,
           '" target="_blank" style="color:#2A7F7F;">',
-          title,
+          CollectionName,
           '</a>'
         ),
-        title
+        CollectionName
       ),
       '</p>',
       '<p style="margin:0;font-size:0.8rem;color:#5a6a7a;font-style:italic;">',
-      ifelse(!is.na(reef), reef, ""),
+      ifelse(!is.na(LocationShownSublocation), LocationShownSublocation, ""),
       '</p>',
       ifelse(
-        !is.na(thumbnail_url) & nchar(thumbnail_url) > 0,
+        !is.na(ThumbnailURL) & nchar(ThumbnailURL) > 0,
         {
           img_tag <- paste0(
             '<img src="',
-            thumbnail_url,
+            ThumbnailURL,
             '" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;margin-top:0.5rem;">'
           )
-          if (!is.na(collection_url)) {
+          if (!is.na(CollectionURL)) {
             paste0(
-              '<a href="', collection_url, '" target="_blank">',
+              '<a href="', CollectionURL, '" target="_blank">',
               img_tag,
               '</a>'
             )
@@ -116,7 +113,7 @@ m <- maplibre(
 
 m <- m |>
   add_navigation_control(position = "top-left") |>
-
+  
   add_source(
     id = "photos",
     data = photos_sf,
@@ -124,7 +121,7 @@ m <- m |>
     cluster_max_zoom = 14,
     cluster_radius = 50
   ) |>
-
+  
   add_circle_layer(
     id = "clusters",
     source = photos_sf,
@@ -132,7 +129,7 @@ m <- m |>
     circle_color = "#2A7F7F",
     circle_opacity = 1
   ) |>
-
+  
   add_symbol_layer(
     id = "cluster-count",
     source = photos_sf,
@@ -141,7 +138,7 @@ m <- m |>
     text_color = "#ffffff",
     text_size = 13
   ) |>
-
+  
   add_circle_layer(
     id = "unclustered",
     source = photos_sf,
@@ -152,7 +149,7 @@ m <- m |>
     circle_stroke_width = 1.5,
     circle_stroke_color = "#2A7F7F"
   ) |>
-
+  
   onRender(
     "
     function(el, x) {

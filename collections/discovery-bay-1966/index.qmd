@@ -8,7 +8,7 @@ page-layout: full
 
 [NHM Data Portal Repository](https://data.nhm.ac.uk/dataset/coral-reef-imagery-by-eileen-graham-of-jamaica-in-the-1960s){.btn-primary} [Internet Archive Repository](https://archive.org/details/@reef_archive?and%5B%5D=creator%3A%22eileen+graham%22){.btn-primary}
 
-::: {.gallery-masonry}
+::: {layout-ncol=4}
 
 ![](img/db001.webp){.lightbox group="discovery-bay-1966" description="**UUID: **eb772ed6-ed59-4572-9ce9-cb85b9564412<br>**Date: **1966-06-07<br>**Location: **Jamaica | Discovery Bay | The Bull<br>**Longitude: **77.38917ºW<br>**Latitude: **18.46917ºN<br>**Photographer: **Eileen Graham<br>**Copyright: **Trustees of the Natural History Museum (London, UK), CC-BY-4.0" alt="**UUID: **eb772ed6-ed59-4572-9ce9-cb85b9564412<br>**Date: **1966-06-07<br>**Location: **Jamaica | Discovery Bay | The Bull<br>**Longitude: **77.38917ºW<br>**Latitude: **18.46917ºN<br>**Photographer: **Eileen Graham<br>**Copyright: **Trustees of the Natural History Museum (London, UK), CC-BY-4.0"}
 

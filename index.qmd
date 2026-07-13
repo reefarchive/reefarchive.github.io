@@ -66,7 +66,7 @@ The Reef Archive is an open repository of historical reef photographs that aims 
 ```{r counts}
 #| echo: false
 #| warning: false
-n <- length(read.csv(file = "data/metadata.csv")$id)
+n <- nrow(read.csv(file = "data/metadata.csv"))
 ```
 
 ```{=html}

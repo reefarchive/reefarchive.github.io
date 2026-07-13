@@ -23,7 +23,7 @@ page_categories <- "[Jamaica, Discovery Bay, 1960s]"
 # Define group for lightbox
 lightbox_group <- "discovery-bay-1966"
 # Number of columns
-#gallery_ncol <- 4
+gallery_ncol <- 4
 # File path
 col_filepath <- "filepath"
 # Image Description
@@ -85,7 +85,7 @@ image_lines <- meta |>
 
 # Wrap in a Quarto layout grid div
 gallery_block <- c(
-  '::: {.gallery-masonry}',
+  glue('::: {{layout-ncol={gallery_ncol}}}'),
   "", 
   image_lines,
   "", 
