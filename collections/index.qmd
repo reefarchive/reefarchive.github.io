@@ -8,5 +8,5 @@ listing:
   fields: [image, title, date, description]
   sort: "date desc"
   categories: true
-page-layout: article
+page-layout: full
 ---

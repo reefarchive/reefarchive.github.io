@@ -9,3 +9,6 @@
 **/*.quarto_ipynb
 /_site
 /site_libs
+/_pipeline/processed/Eileen-Graham-Discovery-Bay/png
+/_pipeline/processed/Eileen-Graham-Discovery-Bay/webp
+/_pipeline/source/Eileen-Graham-Discovery-Bay
