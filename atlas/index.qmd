@@ -46,7 +46,8 @@ photos <- read_csv(metadata_path, show_col_types = FALSE) |>
   # Should not be hardcoded longterm
   mutate(Year = 1966,
          CollectionURL = "../collections/discovery-bay-1966",
-         ThumbnailURL = "../collections/discovery-bay-1966/img/db037.webp") |>
+         ThumbnailURL = "../collections/discovery-bay-1966/img/db037.webp",
+         n = length(CollectionName)) |>
   distinct()
 
 photos_sf <- st_as_sf(
@@ -76,7 +77,9 @@ photos_sf <- photos_sf |>
       ),
       '</p>',
       '<p style="margin:0;font-size:0.8rem;color:#5a6a7a;font-style:italic;">',
-      ifelse(!is.na(LocationShownSublocation), LocationShownSublocation, ""),
+      ifelse(!is.na(LocationShownSublocation), paste0("Location: ", LocationShownSublocation), ""),
+      "\n\n",
+      ifelse(!is.na(n), paste0("Number of images: ", n), ""),
       '</p>',
       ifelse(
         !is.na(ThumbnailURL) & nchar(ThumbnailURL) > 0,
