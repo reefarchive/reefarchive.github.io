@@ -55,4 +55,4 @@ format:
     css: styles/custom.css
     toc: false
     smooth-scroll: true
-    link-external-newwindow: true
+    link-external-newwindow: false
