@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://reefarchive.org/collections/index.html</loc>
-    <lastmod>2026-09-23T13:10:57.911Z</lastmod>
+    <loc>https://reefarchive.org/atlas/index.html</loc>
+    <lastmod>2026-09-24T13:03:37.871Z</lastmod>
   </url>
   <url>
-    <loc>https://reefarchive.org/atlas/index.html</loc>
-    <lastmod>2026-09-23T13:10:57.618Z</lastmod>
+    <loc>https://reefarchive.org/collections/index.html</loc>
+    <lastmod>2026-09-24T13:03:38.162Z</lastmod>
   </url>
   <url>
     <loc>https://reefarchive.org/index.html</loc>
-    <lastmod>2026-09-23T13:10:57.913Z</lastmod>
-  </url>
-  <url>
-    <loc>https://reefarchive.org/about/index.html</loc>
-    <lastmod>2026-09-23T13:10:57.618Z</lastmod>
+    <lastmod>2026-09-24T13:03:38.164Z</lastmod>
   </url>
   <url>
     <loc>https://reefarchive.org/collections/discovery-bay-1966/index.html</loc>
-    <lastmod>2026-09-23T13:10:57.911Z</lastmod>
+    <lastmod>2026-09-24T13:03:38.162Z</lastmod>
+  </url>
+  <url>
+    <loc>https://reefarchive.org/about/index.html</loc>
+    <lastmod>2026-09-24T13:03:37.870Z</lastmod>
   </url>
 </urlset>
