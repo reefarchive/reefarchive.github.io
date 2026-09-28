@@ -31,76 +31,38 @@ library(mapgl)
 library(dplyr)
 library(sf)
 library(readr)
-library(here)
 library(htmlwidgets)
 
-metadata_path <- here::here("data", "metadata.csv")
+collections <- file.path("..", "data", "collections.csv")
+collections <- read.csv(collections)
 
-photos <- read_csv(metadata_path, show_col_types = FALSE) |>
-  filter(!is.na(GPSLatitude), !is.na(GPSLongitude)) |>
-  mutate(GPSLongitude = if_else(GPSLongitudeRef == "W", GPSLongitude * -1, GPSLongitude),
-         GPSLatitude = if_else(GPSLatitudeRef == "S", GPSLatitude * -1, GPSLatitude)
-         ) |>
-  select(CollectionName, DateTimeOriginal, LocationShownSublocation,
-         GPSLongitude, GPSLatitude) |>
-  # Should not be hardcoded longterm
-  mutate(Year = 1966,
-         CollectionURL = "../collections/discovery-bay-1966",
-         ThumbnailURL = "../collections/discovery-bay-1966/img/db037.webp",
-         n = length(CollectionName)) |>
-  distinct()
-
-photos_sf <- st_as_sf(
-  photos[1, ],
-  coords = c("GPSLongitude", "GPSLatitude"),
+collections_sf <- st_as_sf(
+  collections,
+  coords = c("decimalLongitude", "decimalLatitude"),
   crs = 4326
 )
 
-photos_sf <- photos_sf |>
+collections_sf <- collections_sf |>
   mutate(
+    collectionPath = paste0("../", collectionPath),
+    collectionImage = paste0("../", collectionImage),
     popup_html = paste0(
       '<div style="font-family:Georgia,serif;min-width:180px;">',
       '<span style="font-family:monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#2A7F7F;">',
-      Year,
+      year,
       '</span>',
       '<p style="margin:0.25rem 0 0.1rem;font-weight:600;font-size:0.9rem;color:#0D1B2A;">',
-      ifelse(
-        !is.na(CollectionURL),
-        paste0(
-          '<a href="',
-          CollectionURL,
-          '" target="_blank" style="color:#2A7F7F;">',
-          CollectionName,
-          '</a>'
-        ),
-        CollectionName
-      ),
+        paste0('<a href="', collectionPath, '" target="_blank" style="color:#2A7F7F;">', collectionName, '</a>'),
       '</p>',
       '<p style="margin:0;font-size:0.8rem;color:#5a6a7a;font-style:italic;">',
-      ifelse(!is.na(LocationShownSublocation), paste0("Location: ", LocationShownSublocation), ""),
+      paste0("Location: ", location),
       "\n\n",
-      ifelse(!is.na(n), paste0("Number of images: ", n), ""),
+      paste0("Number of images: ", numberOfImages),
       '</p>',
-      ifelse(
-        !is.na(ThumbnailURL) & nchar(ThumbnailURL) > 0,
-        {
-          img_tag <- paste0(
-            '<img src="',
-            ThumbnailURL,
-            '" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;margin-top:0.5rem;">'
-          )
-          if (!is.na(CollectionURL)) {
-            paste0(
-              '<a href="', CollectionURL, '" target="_blank">',
-              img_tag,
-              '</a>'
-            )
-          } else {
-            img_tag
-          }
-        },
-        ""
-      ),
+      paste0('<a href="', collectionPath, '" target="_blank">', 
+             paste0('<img src="', collectionImage, '" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;margin-top:0.5rem;">'
+                    ),
+             '</a>'),
       '</div>'
     )
   )
@@ -118,8 +80,8 @@ m <- m |>
   add_navigation_control(position = "top-left") |>
   
   add_source(
-    id = "photos",
-    data = photos_sf,
+    id = "media",
+    data = collections_sf,
     cluster = TRUE,
     cluster_max_zoom = 14,
     cluster_radius = 50
@@ -127,7 +89,7 @@ m <- m |>
   
   add_circle_layer(
     id = "clusters",
-    source = photos_sf,
+    source = collections_sf,
     filter = list("has", "point_count"),
     circle_color = "#2A7F7F",
     circle_opacity = 1
@@ -135,7 +97,7 @@ m <- m |>
   
   add_symbol_layer(
     id = "cluster-count",
-    source = photos_sf,
+    source = collections_sf,
     filter = list("has", "point_count"),
     text_field = list("get", "point_count_abbreviated"),
     text_color = "#ffffff",
@@ -144,7 +106,7 @@ m <- m |>
   
   add_circle_layer(
     id = "unclustered",
-    source = photos_sf,
+    source = collections_sf,
     filter = list("!", list("has", "point_count")),
     circle_color = "#2A7F7F",
     circle_radius = 6,

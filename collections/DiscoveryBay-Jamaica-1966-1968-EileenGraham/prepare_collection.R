@@ -55,7 +55,6 @@ unzip(zipfile = zip_file, exdir = collection_dir)
 
 # Read media file
 media <- read.csv(file.path(collection_dir, "media.csv"))
-media$fileNameUpdated <- sub(pattern = ".png", replacement = ".webp", x = media$fileName)
 
 # Convert images to webp for website use
 # (light versions, ~100 kb; not for archiving)
@@ -76,6 +75,9 @@ unlink(file.path(collection_dir, "DiscoveryBay-Jamaica-1966-1968-EileenGraham.zi
 # Create collection -----------------------------------------------------
 
 # setup -----------------------------------------------------------------
+# Media
+media <- read.csv(file.path(collection_dir, "media.csv"))
+media$fileNameUpdated <- sub(pattern = ".png", replacement = ".webp", x = media$fileName)
 # Files
 output_qmd_path <- file.path(collection_dir, "index.qmd")
 # Yaml
@@ -84,7 +86,7 @@ doi <- "[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22663465.svg)](https
 page_description <- paste0(
   "A set of underwater photographs from Discovery Bay, Jamaica (1966 to 1968), taken by Eileen Graham. ", 
   "The photographs capture the north coast reefs in a state of vibrancy now largely lost. ")
-page_image <- "img/IMG0037.webp"
+page_image <- "img/IMG0058.webp"
 page_categories <- "[Jamaica, Discovery Bay, 1960s]"
 # Define group for lightbox
 lightbox_group <- "discovery-bay-1966"
@@ -99,11 +101,16 @@ col_alt <- "caption"
 
 # Metadata --------------------------------------------------------------
 
+collection_info <- unique(paste0(
+  "**collectionID:** ", media$collectionID, " | ",
+  "**collectionName:** ", media$collectionName, " | ",
+  "**license:** ", media$license, " | ",
+  "**rightsHolder:** ", media$rightsHolder
+))
+
 media$filepath <- paste0("img/", media$fileNameUpdated)
 media$caption <- paste0(
   "**mediaID: **", media$mediaID, "<br>",
-  "**collectionID: **", media$collectionID, "<br>",
-  "**collectionName: **", media$collectionName, "<br>",
   "**year: **", media$year, "<br>",
   "**waterBody: **", media$waterBody, "<br>",
   "**country: **", media$country, "<br>",
@@ -113,9 +120,7 @@ media$caption <- paste0(
   "**decimalLongitude: **", media$decimalLongitude, "<br>",
   "**decimalLatitude: **", media$decimalLatitude, "<br>",
   "**georeferenceRemarks: **", media$georeferenceRemarks, "<br>",
-  "**mediaComments: **", media$mediaComments, "<br>",
-  "**license: **", media$license, "<br>",
-  "**rightsHolder: **", media$rightsHolder
+  "**mediaComments: **", media$mediaComments
 )
 
 #-------------------------------------------------------------------
@@ -168,6 +173,8 @@ gallery_block <- c(
 #-------------------------------------------------------------------
 qmd_content <- c(
   yaml_header,
+  collection_info,
+  "",
   btn,
   "",
   gallery_block
@@ -178,8 +185,6 @@ writeLines(qmd_content, output_qmd_path)
 message("Wrote ", length(image_lines), " image(s) to ", output_qmd_path)
 
 # TODO:
-# Reduce amount of information per image (some items are collection level)
 # Update footer
-# Update counter of photographs on home page
 # Fix Atlas 
 # Add standards 
