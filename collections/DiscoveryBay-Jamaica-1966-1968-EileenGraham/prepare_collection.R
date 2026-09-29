@@ -82,7 +82,7 @@ media$fileNameUpdated <- sub(pattern = ".png", replacement = ".webp", x = media$
 output_qmd_path <- file.path(collection_dir, "index.qmd")
 # Yaml
 page_title <- "The Eileen Graham Collection (Discovery Bay, Jamaica, 1966 to 1968)"
-doi <- "[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22663465.svg)](https://doi.org/10.5281/zenodo.22663465)"
+page_subtitle <- "Download: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22663465.svg)](https://doi.org/10.5281/zenodo.22663465)"
 page_description <- paste0(
   "A set of underwater photographs from Discovery Bay, Jamaica (1966 to 1968), taken by Eileen Graham. ", 
   "The photographs capture the north coast reefs in a state of vibrancy now largely lost. ",
@@ -123,7 +123,7 @@ media$caption <- paste0(
 yaml_header <- glue(
   '---
 title: "{page_title}"
-subtitle: "{doi}"
+subtitle: "{page_subtitle}"
 description: "{page_description}"
 image: "{page_image}"   # thumbnail shown in the listing grid
 categories: {page_categories}
@@ -167,7 +167,6 @@ gallery_block <- c(
 #-------------------------------------------------------------------
 qmd_content <- c(
   yaml_header,
-  btn,
   "",
   gallery_block
 )
