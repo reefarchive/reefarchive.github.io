@@ -45,7 +45,7 @@ website:
     center: |
       [Contact us](mailto:info@reefarchive.org)
     right: |
-      [Built with Quarto](https://quarto.org) · [Images Archived via Internet Archive](https://archive.org/details/@reef_archive/uploads)
+      [Built with Quarto](https://quarto.org) · [Images Archived via Zenodo](https://zenodo.org/communities/reefarchive)
 
 format:
   html:

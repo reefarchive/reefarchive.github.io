@@ -28,11 +28,15 @@ write.csv(media, "data/media.csv", row.names = FALSE)
 collections <- media |>
   group_by(collectionID) |>
   mutate(numberOfImages = length(mediaID)) |>
+  group_by(collectionID, decimalLongitude, decimalLatitude) |>
   mutate(collectionImage = sample(filePath, size = 1)) |>
-  mutate(location = str_c(country, municipality, locality, sep = " | ")) |>
+  mutate(location = str_c(waterBody, country, sep = " | ")) |>
   select(collectionID, collectionName, collectionImage, collectionPath,
          year,
          decimalLongitude, decimalLatitude, location, numberOfImages) |>
+  # Add paths
+  mutate(collectionPath = paste0("../", collectionPath),
+         collectionImage = paste0("../", collectionImage)) |>
   distinct()
 # Save data
 write.csv(collections, "data/collections.csv", row.names = FALSE)

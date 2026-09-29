@@ -81,11 +81,12 @@ media$fileNameUpdated <- sub(pattern = ".png", replacement = ".webp", x = media$
 # Files
 output_qmd_path <- file.path(collection_dir, "index.qmd")
 # Yaml
-page_title <- "Discovery Bay, Jamaica (1966 to 1968)"
+page_title <- "The Eileen Graham Collection (Discovery Bay, Jamaica, 1966 to 1968)"
 doi <- "[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22663465.svg)](https://doi.org/10.5281/zenodo.22663465)"
 page_description <- paste0(
   "A set of underwater photographs from Discovery Bay, Jamaica (1966 to 1968), taken by Eileen Graham. ", 
-  "The photographs capture the north coast reefs in a state of vibrancy now largely lost. ")
+  "The photographs capture the north coast reefs in a state of vibrancy now largely lost. ",
+  "Trustees of the Natural History Museum, [**CC BY 4.0**](http://creativecommons.org/licenses/by/4.0/legalcode).")
 page_image <- "img/IMG0058.webp"
 page_categories <- "[Jamaica, Discovery Bay, 1960s]"
 # Define group for lightbox
@@ -100,13 +101,6 @@ col_caption <- "caption"
 col_alt <- "caption"
 
 # Metadata --------------------------------------------------------------
-
-collection_info <- unique(paste0(
-  "**collectionID:** ", media$collectionID, " | ",
-  "**collectionName:** ", media$collectionName, " | ",
-  "**license:** ", media$license, " | ",
-  "**rightsHolder:** ", media$rightsHolder
-))
 
 media$filepath <- paste0("img/", media$fileNameUpdated)
 media$caption <- paste0(
@@ -139,7 +133,7 @@ page-layout: full
   '
 )
 
-btn <- '<a href="https://doi.org/10.5281/zenodo.22663464" target="_blank" rel="noopener noreferrer" class="btn-primary">**Download Collection**</a>'
+btn <- '<a href="https://doi.org/10.5281/zenodo.22663464" target="_blank" rel="noopener noreferrer" class="btn-primary">**Download**</a>'
 
 #-------------------------------------------------------------------
 # 4. Build the lightbox gallery grid
@@ -173,8 +167,6 @@ gallery_block <- c(
 #-------------------------------------------------------------------
 qmd_content <- c(
   yaml_header,
-  collection_info,
-  "",
   btn,
   "",
   gallery_block
@@ -183,8 +175,3 @@ qmd_content <- c(
 writeLines(qmd_content, output_qmd_path)
 
 message("Wrote ", length(image_lines), " image(s) to ", output_qmd_path)
-
-# TODO:
-# Update footer
-# Fix Atlas 
-# Add standards 

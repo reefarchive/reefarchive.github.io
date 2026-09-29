@@ -13,7 +13,7 @@ But this record is disappearing. Ageing film degrades. Scientists retire or pass
 
 **The Reef Archive** exists to change that.
 
-We are building an open-access, community-curated repository for legacy reef imagery and its associated metadata (precise locations, dates, depths, photographers, and ecological context) hosted both here and on the [Internet Archive](https://archive.org). Our goal is to rescue this visual record, make it freely accessible to researchers, conservationists, and the public, and preserve it for the generations of scientists who will need it most.
+We are building an open-access, community-curated repository for legacy reef imagery and its associated metadata (precise locations, dates, depths, photographers, and ecological context) hosted both here and on [Zenodo](https://zenodo.org/communities/reefarchive). Our goal is to rescue this visual record, make it freely accessible to researchers, conservationists, and the public, and preserve it for the generations of scientists who will need it most.
 
 # Meet the Team
 

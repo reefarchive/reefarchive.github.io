@@ -44,8 +44,6 @@ collections_sf <- st_as_sf(
 
 collections_sf <- collections_sf |>
   mutate(
-    collectionPath = paste0("../", collectionPath),
-    collectionImage = paste0("../", collectionImage),
     popup_html = paste0(
       '<div style="font-family:Georgia,serif;min-width:180px;">',
       '<span style="font-family:monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#2A7F7F;">',
@@ -54,15 +52,14 @@ collections_sf <- collections_sf |>
       '<p style="margin:0.25rem 0 0.1rem;font-weight:600;font-size:0.9rem;color:#0D1B2A;">',
         paste0('<a href="', collectionPath, '" target="_blank" style="color:#2A7F7F;">', collectionName, '</a>'),
       '</p>',
-      '<p style="margin:0;font-size:0.8rem;color:#5a6a7a;font-style:italic;">',
-      paste0("Location: ", location),
-      "\n\n",
-      paste0("Number of images: ", numberOfImages),
+      '<p style="margin:0;font-size:0.8rem;color:#5a6a7a;">',
+      paste0("collectionID: ", collectionID),
       '</p>',
       paste0('<a href="', collectionPath, '" target="_blank">', 
              paste0('<img src="', collectionImage, '" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;margin-top:0.5rem;">'
                     ),
              '</a>'),
+      '<br>',
       '</div>'
     )
   )
@@ -85,23 +82,6 @@ m <- m |>
     cluster = TRUE,
     cluster_max_zoom = 14,
     cluster_radius = 50
-  ) |>
-  
-  add_circle_layer(
-    id = "clusters",
-    source = collections_sf,
-    filter = list("has", "point_count"),
-    circle_color = "#2A7F7F",
-    circle_opacity = 1
-  ) |>
-  
-  add_symbol_layer(
-    id = "cluster-count",
-    source = collections_sf,
-    filter = list("has", "point_count"),
-    text_field = list("get", "point_count_abbreviated"),
-    text_color = "#ffffff",
-    text_size = 13
   ) |>
   
   add_circle_layer(
