@@ -1,7 +1,6 @@
 ---
 pagetitle: "Collections"
 listing:
-  contents: "*/index.qmd"
   type: grid
   grid-columns: 3
   image-height: "220px"
