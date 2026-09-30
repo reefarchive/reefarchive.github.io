@@ -46,9 +46,11 @@ collections_sf <- collections_sf |>
   mutate(
     popup_html = paste0(
       '<div style="font-family:Georgia,serif;min-width:180px;">',
-      '<p style="margin:0.25rem 0 0.1rem;font-size:0.9rem;color:#0D1B2A;">',
-      paste0('<a href="', collectionPath, '" target="_blank" style="color:#2A7F7F;"><strong>', collectionName,
-             '</strong></a>'),
+      '<span style="font-family:monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:#2A7F7F;">',
+      year,
+      '</span>',
+      '<p style="margin:0.25rem 0 0.1rem;font-weight:600;font-size:1rem;color:#0D1B2A;">',
+        paste0('<a href="', collectionPath, '" target="_blank" style="color:#2A7F7F;font-weight:2000;">', collectionName, '</a>'),
       '</p>',
       '<p style="margin:0;font-size:0.8rem;color:#5a6a7a;">',
       paste0("<strong>Collection ID: </strong>", collectionID),
@@ -57,7 +59,7 @@ collections_sf <- collections_sf |>
       '<br>',
       paste0("<strong>Location: </strong>", location),
       '<br>',
-      paste0("<strong>Number of media items: </strong>", numberOfImages),
+      paste0("<strong>Number of collection media items: </strong>", numberOfImages),
       '</p>',
       paste0('<a href="', collectionPath, '" target="_blank">', 
              paste0('<img src="', collectionImage, '" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;margin-top:0.5rem;">'

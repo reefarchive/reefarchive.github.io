@@ -1,0 +1,319 @@
+{
+  "name": "discovery-bay-jamaica-1966-1968-eileen-graham",
+  "id": "https://doi.org/10.5281/zenodo.22663464",
+  "profile": "tabular-data-package",
+  "title": "The Eileen Graham Collection (Discovery Bay, Jamaica, 1966 to 1968)",
+  "description": "Historical coral reef photographs taken at Discovery Bay, Jamaica, between 1966 and 1968.",
+  "homepage": "https://www.reefarchive.org",
+  "version": "1.0.1",
+  "created": "2026-09-29T11:16:50Z",
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "path": "http://creativecommons.org/licenses/by/4.0/legalcode",
+      "title": "Creative Commons Attribution 4.0 International"
+    }
+  ],
+  "contributors": [
+    {
+      "title": "Lewis A. Jones",
+      "email": "LewisA.Jones@outlook.com",
+      "path": "https://orcid.org/0000-0003-3902-8986",
+      "role": "dataCurator",
+      "organization": "Natural History Museum"
+    },
+    {
+      "title": "Kenneth Johnson",
+      "email": "k.johnson@nhm.ac.uk",
+      "role": "dataCurator",
+      "organization": "Natural History Museum"
+    },
+    {
+      "title": "Eileen Graham",
+      "role": "creator"
+    },
+    {
+      "title": "Trustees of the Natural History Museum",
+      "path": "https://www.nhm.ac.uk",
+      "role": "rightsHolder"
+    }
+  ],
+  "keywords": [
+    "coral reefs",
+    "Jamaica",
+    "Discovery Bay",
+    "Caribbean",
+    "historical photography"
+  ],
+  "resources": [
+    {
+      "name": "media",
+      "title": "Media",
+      "description": "Image-level metadata for historical coral reef photographs taken at Discovery Bay, Jamaica, between 1966 and 1968. Media files are stored in the media/ folder and linked to records by fileName.",
+      "path": "media.csv",
+      "profile": "tabular-data-resource",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "mediaID",
+            "type": "string",
+            "description": "A unique identifier for the media file.",
+            "example": "10.5281/zenodo.22663464-IMG0001",
+            "constraints": {
+              "required": true,
+              "unique": true
+            }
+          },
+          {
+            "name": "fileName",
+            "type": "string",
+            "description": "The name of the media file.",
+            "example": "IMG0001.png, MOV0001.mov",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "collectionID",
+            "type": "string",
+            "description": "A unique identifier for the collection.",
+            "example": "10.5281/zenodo.22663464",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "collectionName",
+            "type": "string",
+            "description": "The name of the collection.",
+            "example": "Eileen Graham's Collection, Discovery Bay, Jamaica (1966 to 1968).",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "description": "The nature of the resource.",
+            "example": "StillImage, MovingImage",
+            "constraints": {
+              "required": true,
+              "enum": [
+                "StillImage",
+                "MovingImage"
+              ]
+            }
+          },
+          {
+            "name": "bibliographicCitation",
+            "type": "string",
+            "description": "A bibliographic reference for the resource.",
+            "example": "Johnson, K. and Jones, L.A. (2026) Eileen Graham Collection, Discovery Bay, Jamaica (1966 to 1968). https://doi.org/10.5281/zenodo.22663464.",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "license",
+            "type": "string",
+            "description": "A legal document giving official permission to do something with the resource.",
+            "example": "http://creativecommons.org/licenses/by/4.0/legalcode",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "rightsHolder",
+            "type": "string",
+            "description": "A person or organisation owning or managing rights over the resource.",
+            "example": "Trustees of the Natural History Museum",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "capturedBy",
+            "type": "string",
+            "description": "Name or identifier of the person or organisation that captured the media.",
+            "example": "Eileen Graham",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "digitisedBy",
+            "type": "string",
+            "description": "Name or identifier of the person or organisation that digitised the media.",
+            "example": "Kenneth Johnson",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "processedBy",
+            "type": "string",
+            "description": "Name or identifier of the person or organisation that processed the media.",
+            "example": "Lewis A. Jones",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "year",
+            "type": "integer",
+            "description": "The four-digit year in which the media was captured, according to the Common Era Calendar.",
+            "example": "1984",
+            "constraints": {
+              "required": true,
+              "minimum": 1000,
+              "maximum": 9999
+            }
+          },
+          {
+            "name": "month",
+            "type": "integer",
+            "description": "The integer month in which the media was captured.",
+            "example": "6",
+            "constraints": {
+              "minimum": 1,
+              "maximum": 12
+            }
+          },
+          {
+            "name": "day",
+            "type": "integer",
+            "description": "The integer day of the month in which the media was captured.",
+            "example": "3",
+            "constraints": {
+              "minimum": 1,
+              "maximum": 31
+            }
+          },
+          {
+            "name": "habitat",
+            "type": "string",
+            "description": "A category or description of the habitat in which the media was captured.",
+            "example": "reef flat, reef edge, reef slope"
+          },
+          {
+            "name": "waterBody",
+            "type": "string",
+            "description": "The name of the water body in which the media was captured.",
+            "example": "The Caribbean Sea"
+          },
+          {
+            "name": "islandGroup",
+            "type": "string",
+            "description": "The name of the island group in which the media was captured.",
+            "example": "Greater Antilles"
+          },
+          {
+            "name": "island",
+            "type": "string",
+            "description": "The name of the island in which the media was captured.",
+            "example": "Jamaica"
+          },
+          {
+            "name": "country",
+            "type": "string",
+            "description": "The name of the country or major administrative unit in which the media was captured.",
+            "example": "Jamaica"
+          },
+          {
+            "name": "countryCode",
+            "type": "string",
+            "description": "The standard code for the country in which the media was captured (ISO 3166-1-alpha-2).",
+            "example": "JM"
+          },
+          {
+            "name": "stateProvince",
+            "type": "string",
+            "description": "The name of the next smaller administrative region than country (state, province, canton, department, region, etc.) in which the media was captured."
+          },
+          {
+            "name": "county",
+            "type": "string",
+            "description": "The full, unabbreviated name of the next smaller administrative region than stateProvince (county, shire, department, etc.) in which the media was captured.",
+            "example": "Saint Ann Parish, Middlesex County"
+          },
+          {
+            "name": "municipality",
+            "type": "string",
+            "description": "The full, unabbreviated name of the next smaller administrative region than county (city, municipality, etc.) in which the media was captured.",
+            "example": "Discovery Bay"
+          },
+          {
+            "name": "locality",
+            "type": "string",
+            "description": "The specific description of the place.",
+            "example": "Pinnacle 1 Sand Slope"
+          },
+          {
+            "name": "decimalLongitude",
+            "type": "number",
+            "description": "A geographic longitude (in decimal degrees) as per EPSG:4326 geodetic datum. Always reported in Eastings.",
+            "example": "-121.1761111",
+            "constraints": {
+              "required": true,
+              "minimum": -180,
+              "maximum": 180
+            }
+          },
+          {
+            "name": "decimalLatitude",
+            "type": "number",
+            "description": "A geographic latitude (in decimal degrees) as per EPSG:4326 geodetic datum. Always reported in Northings.",
+            "example": "-41.0983423",
+            "constraints": {
+              "required": true,
+              "minimum": -90,
+              "maximum": 90
+            }
+          },
+          {
+            "name": "georeferenceRemarks",
+            "type": "string",
+            "description": "Comments or notes about the spatial description determination, explaining assumptions made or the protocol.",
+            "example": "Coordinates inferred from local feature (buoy), precise to the nearest minute (0.01)."
+          },
+          {
+            "name": "minimumDepthInMetres",
+            "type": "number",
+            "description": "The least depth within a range of depths in metres.",
+            "example": "10"
+          },
+          {
+            "name": "maximumDepthInMetres",
+            "type": "number",
+            "description": "The greatest depth within a range of depths in metres.",
+            "example": "25"
+          },
+          {
+            "name": "mediaComments",
+            "type": "string",
+            "description": "Any comments or notes about the media file.",
+            "example": "Media file corrupted."
+          },
+          {
+            "name": "modified",
+            "type": "date",
+            "description": "Date on which the resource was changed. Formatted as an ISO 8601 string (YYYY-MM-DD).",
+            "example": "1969-02-12",
+            "constraints": {
+              "required": true
+            }
+          }
+        ],
+        "missingValues": [
+          "", "NA", "NaN", "nan"
+        ],
+        "primaryKey": [
+          "mediaID"
+        ]
+      }
+    }
+  ]
+}
