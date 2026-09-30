@@ -159,16 +159,40 @@ a {
 
 /* ── Collections ─────────────────────────────────────── */
 
-.gallery-masonry {
-  column-count: 3;
-  column-gap: 1rem;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 8px;
 }
 
-.gallery-masonry img {
-  width: 100%;
-  margin-bottom: 1rem;
-  break-inside: avoid;
+/* Pandoc wraps each image in a <p>; remove its spacing */
+.gallery p {
+  margin: 0;
+}
+
+.gallery a.lightbox {
   display: block;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;      /* square tiles; try 4 / 3 for a more landscape feel */
+  object-fit: cover;        /* crop to fill instead of stretching */
+  object-position: center;  /* adjust the crop focus, e.g. center top */
+  transition: opacity 0.2s ease;
+}
+
+.gallery img:hover {
+  opacity: 0.85;
+}
+
+/* Fewer columns on smaller screens */
+@media (max-width: 992px) {
+  .gallery { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 576px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ── Home ─────────────────────────────────────── */
