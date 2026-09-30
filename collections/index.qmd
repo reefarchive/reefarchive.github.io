@@ -8,4 +8,5 @@ listing:
   sort: "date desc"
   categories: true
 page-layout: full
+post-render: fix_index_links.R
 ---
