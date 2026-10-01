@@ -17,7 +17,7 @@ add_gallery <- function(
   mediaDir = "media",
   caption_fields = NULL,
   group = "gallery",
-  ncol = 4
+  ncol = 3
 ) {
   paths <- file.path(mediaDir, as.character(media[[fileName]]))
 
@@ -44,7 +44,7 @@ add_gallery <- function(
 
   md <- paste(
     c(
-      sprintf("::: {layout-ncol=%s .gallery}", ncol),
+      sprintf('::: {.gallery style="--gallery-cols: %s"}', ncol),
       "",
       sprintf(
         '![](%s){.lightbox group="%s" description="%s" alt="%s"}\n',
