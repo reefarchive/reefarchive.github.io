@@ -34,7 +34,7 @@ website:
       - icon: envelope-fill
         href: mailto:info@reefarchive.org
         aria-label: Contact
-      - icon: archive
+      - icon: archive-fill
         href: https://zenodo.org/communities/reefarchive
         aria-label: Zenodo
       - icon: github
