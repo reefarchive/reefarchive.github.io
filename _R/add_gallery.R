@@ -17,7 +17,7 @@ add_gallery <- function(
   mediaDir = "media",
   caption_fields = NULL,
   group = "gallery",
-  ncol = 3
+  ncol = 4
 ) {
   paths <- file.path(mediaDir, as.character(media[[fileName]]))
 
