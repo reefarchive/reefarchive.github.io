@@ -20,21 +20,23 @@ website:
   
   navbar:
     pinned: true
-    background: "#0D1B2A"
+    background: "#0D1B2A"s
     foreground: "#F7F4EE"
     favicon: _img/favicon.png
     search: false
     right:
       - text: "About"
-        href: about/index.qmd
+        menu: 
+          - text: "Reef Archive"
+            href: about/about
+          - text: "Data Standards"
+            href: about/standards
+          - text: "Contribute"
+            href: about/contribute
       - text: "Collections"
-        href: collections/index.qmd
+        href: collections
       - text: "Atlas"
-        href: atlas/index.qmd
-      - text: "Standards"
-        href: standards/index.qmd
-      - text: "Contribute"
-        href: contribute/index.qmd
+        href: atlas
       - icon: envelope-fill
         href: mailto:info@reefarchive.org
         aria-label: Contact
