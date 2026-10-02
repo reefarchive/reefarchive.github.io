@@ -17,7 +17,7 @@ Our long-term goal is to develop semi-automated workflows for ingesting historic
 
 1. **Digitise** analogue images (slides, prints and negatives).
 2. **Prepare and link metadata** such as who took the photograph, where and when.
-3. **Review and conform** the metadata to our [**data standard**](../standard/index.qmd).
+3. **Review and conform** the metadata to our [**data standard**](../standards/index.qmd).
 4. **Archive** the images on [**Zenodo**](https://zenodo.org/communities/reefarchive)
    and add them to the Reef Archive website.
 

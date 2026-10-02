@@ -29,6 +29,7 @@ a {
   color: var(--teal);
   text-decoration: none;
   border-bottom: 1px solid transparent;
+  font-weight: bold;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
 

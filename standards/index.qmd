@@ -1,5 +1,5 @@
 ---
-pagetitle: "Standard"
+pagetitle: "Standards"
 page-layout: article
 ---
 
@@ -22,15 +22,10 @@ The terms are adapted from the [**Darwin Core standard**](https://www.tdwg.org/s
 #| label: setup-data-standard
 #| include: false
 
-library(googlesheets4)
 library(dplyr)
 library(htmltools)
 
-gs4_deauth()
-
-sheet_url <- "https://docs.google.com/spreadsheets/d/1avjSsLLPe7En3n2SiAIeMI0A01Zb5OsLydjbcYJmjTw/edit?usp=sharing"
-
-standard <- read_sheet(sheet_url, range = cell_cols("A:F"), col_types = "cccccl") |>
+standard <- read.csv("data-standard.csv") |>
   rename(table = 1, term = 2, definition = 3, examples = 4, exif = 5, required = 6) |>
   filter(!is.na(term)) |>
   mutate(id = paste0(tolower(table), "-", term))

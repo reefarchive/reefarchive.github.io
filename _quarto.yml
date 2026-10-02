@@ -25,14 +25,14 @@ website:
     favicon: _img/favicon.png
     search: false
     right:
+      - text: "About"
+        href: about/index.qmd
       - text: "Collections"
         href: collections/index.qmd
       - text: "Atlas"
         href: atlas/index.qmd
-      - text: "About"
-        href: about/index.qmd
-      - text: "Standard"
-        href: standard/index.qmd
+      - text: "Standards"
+        href: standards/index.qmd
       - text: "Contribute"
         href: contribute/index.qmd
       - icon: envelope-fill
