@@ -20,7 +20,7 @@ website:
   
   navbar:
     pinned: true
-    background: "#0D1B2A"s
+    background: "#0D1B2A"
     foreground: "#F7F4EE"
     favicon: _img/favicon.png
     search: false
