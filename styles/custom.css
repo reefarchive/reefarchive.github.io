@@ -194,6 +194,75 @@ a {
   .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ── Data standard ─────────────────────────────────────── */
+
+/* term index: chips that link to each card */
+.ds-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 2rem 0;
+}
+
+.ds-index a.rr-tag {
+  display: inline-block;
+  margin: 0;
+  padding: 0.2rem 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: var(--offwhite);
+  color: var(--navy);
+  border: 0.1em solid var(--navy);
+}
+.ds-index a.rr-tag:hover {
+  background: var(--navy);
+  color: #fff;
+}
+
+/* cards: navy header bar, rows underneath */
+.ds-card { margin: 0 0 1.25rem 0; }
+
+.ds-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.7rem 1.2rem;
+  background: var(--navy);
+}
+.ds-term {
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  color: var(--offwhite);
+}
+.ds-head .rr-tag {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  background: transparent;
+  color: var(--offwhite);
+  border: 0.1em solid var(--offwhite);
+}
+
+/* rows */
+.ds-body { padding: 0.25rem 1.2rem 0.5rem; }
+.ds-row {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 1rem;
+  padding: 0.75rem 0;
+}
+.ds-row + .ds-row { border-top: 1px solid rgba(200, 184, 154, 0.5); }
+.ds-label { font-size: 0.9rem; }
+.ds-value code {
+  background: none;
+  color: var(--mid-navy);
+}
+
+@media (max-width: 600px) {
+  .ds-row { grid-template-columns: 1fr; gap: 0.15rem; }
+}
+
 /* ── Home ─────────────────────────────────────── */
 
 .btn-primary {
@@ -255,20 +324,8 @@ a {
 }
 
 .nav-footer a:hover {
-  color: var(--offwhite);
+  color: var(--paper);
   border-bottom: none;
 }
 
-/* ── Metadata tags ────────────────────────────────────────── */
 
-.rr-tag {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: var(--pale-teal);
-  color: var(--teal);
-  padding: 0.2rem 0.55rem;
-  margin: 0.15rem;
-}
