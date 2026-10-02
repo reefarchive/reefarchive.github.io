@@ -1,0 +1,46 @@
+Table,Term,Definition,Example(s),EXIF Tag Mapping,Required
+Media,mediaID,A unique identifier for the media file. Concatenating collectionID and fileName is considered best practice.,10.5281/zenodo.22663465-IMG0001,ImageUniqueID,TRUE
+Media,fileName,"The name of the media file. Prefixing still images with ""IMG"" and and moving images with ""MOV"" is considered best practice.","IMG0001, MOV0001",OriginalRawFileName,TRUE
+Media,collectionID,A unique identifier for the collection. Using a stable Digital Object Identifier is considered best practice. ,10.5281/zenodo.22663465,,TRUE
+Media,collectionName,The name of the collection.,"Eileen Graham's Collection, Discovery Bay, Jamaica, (1966–1968).",ImageDescription,TRUE
+Media,type,"The nature of the resource. Constraints: StillImage, MovingImage.","StillImage, MovingImage",,TRUE
+Media,bibliographicCitation,A bibliographic reference for the resource.,"Johnson, K. and Jones, L.A. (2026) Eileen Graham Collection, Discovery Bay, Jamaica (1966–1968). https://doi.org/10.5281/zenodo.22663465.",,TRUE
+Media,license,A legal document giving official permission to do something with the resource.,http://creativecommons.org/licenses/by/4.0/legalcode,Copyright,TRUE
+Media,rightsHolder,A person or organisation owning or managing rights over the resource.,Trustees of the Natural History Museum,Copyright,TRUE
+Media,capturedBy,Name or identifier of the person or organization that captured the media.,Eileen Graham,Artist,TRUE
+Media,digitisedBy,Name or identifier of the person or organization that digitized the media.,Kenneth Johnson,,TRUE
+Media,processedBy,Name or identifier of the person or organization that processed the media.,Lewis A. Jones,,TRUE
+Media,year,"The four-digit year in which the media was captured, according to the Common Era Calendar.",1984,DateTimeOriginal,TRUE
+Media,month,The integer month in which the media was captured.,6,DateTimeOriginal,FALSE
+Media,day,The integer day of the month in which the media was captured.,3,DateTimeOriginal,FALSE
+Media,habitat,A category or description of the habitat in which the media was captured.,"reef flat, reef edge, reef slope",GPSAreaInformation,FALSE
+Media,waterBody,The name of the water body in which the media was captured. Using a standard gazetters is considered best practice (e.g. marineregions.org).,The Caribbean Sea,GPSAreaInformation,FALSE
+Media,islandGroup,The name of the island group in which the media was captured. Using a standard gazetters is considered best practice (e.g. marineregions.org).,Greater Antilles,GPSAreaInformation,FALSE
+Media,island,The name of the island in which the media was captured. Using a standard gazetters is considered best practice (e.g. marineregions.org).,Jamaica,GPSAreaInformation,FALSE
+Media,country,The name of the country or major administrative unit in which the media was captured.,Jamaica,GPSAreaInformation,FALSE
+Media,countryCode,The standard code for the country in which the media was captured (ISO 3166-1-alpha-2).,JM,GPSAreaInformation,FALSE
+Media,stateProvince,"The name of the next smaller administrative region than country (state, province, canton, department, region, etc.) in which the media was captured.",,GPSAreaInformation,FALSE
+Media,county,"The full, unabbreviated name of the next smaller administrative region than stateProvince (county, shire, department, etc.) in which the media was captured.","Saint Ann Parish, Middlesex County",GPSAreaInformation,FALSE
+Media,municipality,"The full, unabbreviated name of the next smaller administrative region than county (city, municipality, etc.) in which the media was captured.",Discovery Bay,GPSAreaInformation,FALSE
+Media,locality,The specific description of the place.,Pinnacle 1 Sand Slope,GPSAreaInformation,FALSE
+Media,decimalLongitude,A geographic longitude (in decimal degrees) as per EPSG:4326 geodetic datum. Always reported in Eastings.,-121.1761111,GPSLongitude,TRUE
+Media,decimalLatitude,A geographic latitude (in decimal degrees) as per EPSG:4326 geodetic datum. Always reported in Northings.,-41.0983423,GPSLatitude,TRUE
+Media,georeferenceRemarks,"Comments or notes about the spatial description determination, explaining assumptions made or the protocol.","Coordinates inferred from local feature (buoy), precise to the nearest minute (0.01).",UserComment,FALSE
+Media,minimumDepthInMetres,The least depth within a range of depths in metres.,10,WaterDepth,FALSE
+Media,maximumDepthInMetres,The greatest depth within a range of depths in metres.,25,WaterDepth,FALSE
+Media,mediaComments,Any comments or notes about the media file.,Media file corrupted.,UserComment,FALSE
+Media,modified,Date on which the resource was changed. Formatted as an ISO 8601 string (YYYY-MM-DD).,1969-02-12,,TRUE
+Observation,observationID,A unique identifier of the observation.,58275b54-059f-4f3f-afa4-d501dfc3b470,,TRUE
+Observation,mediaID,A unique identifier for the media.,52c8a4b0-45c7-4c31-b847-0d094e1208c5,,TRUE
+Observation,observationType,The type of the observation.,"Fauna, Human, Unknown",,TRUE
+Observation,observationValue,The value of the observation.,"Acropora cervicornis (Lamarck, 1816)",,TRUE
+Observation,observationValueContext,An identifier or uniform resource locator (URL) that points to further context related to the observation value (e.g. scientific name ID).,urn:lsid:marinespecies.org:taxname:206989,,FALSE
+Observation,bboxX,Horizontal position of the top-left corner of a bounding box that encompasses the observed individual(s) in the media file identified by mediaID.,0.2,,FALSE
+Observation,bboxY,Vertical position of the top-left corner of a bounding box that encompasses the observed individual(s) in the media file identified by mediaID.,0.25,,FALSE
+Observation,bboxWidth,Width of a bounding box that encompasses the observed individual(s) in the media file identified by mediaID.,0.4,,FALSE
+Observation,bboxHeight,Height of the bounding box that encompasses the observed individual(s) in the media file identified by mediaID.,0.5,,FALSE
+Observation,classificationMethod,"Method used to classify the observation. Constraints: Human, Machine.","Human, Machine",,TRUE
+Observation,classifiedBy,Name or identifier of the person or AI algorithm that classified the observation.,Kenneth Johnson,,TRUE
+Observation,classificationTimestamp,Date and time of the classification. Formatted as an ISO 8601 string with timezone designator (YYYY-MM-DDThh:mm:ssZ).,2026-09-15T01:29:38Z (Z denotes UTC),,TRUE
+Observation,classificationProbability,"Degree of certainty of the classification. Expressed as a probability, with 1 being maximum certainty. ",0.8,,TRUE
+Observation,observationComments,Comments or notes about the observation.,Training dataset for project fish count,,FALSE
