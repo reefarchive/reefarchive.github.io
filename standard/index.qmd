@@ -1,0 +1,85 @@
+---
+pagetitle: "Standard"
+page-layout: article
+---
+
+# Data Standard
+
+This page serves as a reference for the metadata terms used by the Reef Archive to describe historical coral reef photographs. Each term lists its definition, examples, and where relevant, the EXIF tag it maps to in the media file, and is marked as required or optional.
+
+The terms are adapted from the [**Darwin Core standard**](https://www.tdwg.org/standards/dwc/) and the [**Camera Trap Data Package (CamTrap DP)**](https://camtrap-dp.tdwg.org), so that Reef Archive data can be shared with, and understood by, the wider biodiversity data community. Where a term follows Darwin Core or CamTrap DP, its meaning is the same; where the Reef Archive has added or modified a term, the definition on this page is the one that applies.
+
+**Need help?** If something here is unclear, or you are unsure how to describe a media file, get in touch at [**info@reefarchive.org**](mailto:info@reefarchive.org) or open an issue on the
+[**Reef Archive GitHub repository**](https://github.com/reefarchive/reefarchive.github.io/issues).
+
+**Want to contribute?** Suggestions for new terms, or changes to existing definitions and examples, are welcome. Please propose them as an issue or pull request on the [**GitHub repository**](https://github.com/reefarchive/reefarchive.github.io).
+
+**How do I cite this?** Archived media and metadata are deposited in the [**Reef Archive community on Zenodo**](https://zenodo.org/communities/reefarchive). Please cite the relevant record, and the [**bibliographicCitation**](#media-bibliographicCitation) and [**license**](#media-license) given for each media file, when reusing images or data.
+
+# List of Terms
+
+```{r}
+#| label: setup-data-standard
+#| include: false
+
+library(googlesheets4)
+library(dplyr)
+library(htmltools)
+
+gs4_deauth()
+
+sheet_url <- "https://docs.google.com/spreadsheets/d/1avjSsLLPe7En3n2SiAIeMI0A01Zb5OsLydjbcYJmjTw/edit?usp=sharing"
+
+standard <- read_sheet(sheet_url, range = cell_cols("A:F"), col_types = "cccccl") |>
+  rename(table = 1, term = 2, definition = 3, examples = 4, exif = 5, required = 6) |>
+  filter(!is.na(term)) |>
+  mutate(id = paste0(tolower(table), "-", term))
+
+# wrap HTML in a raw block so pandoc passes it through untouched
+raw_html <- function(x) {
+  cat("\n\n```{=html}\n", paste(x, collapse = "\n"), "\n```\n\n", sep = "")
+}
+
+# escape HTML, then turn URLs into links (dropping trailing punctuation)
+linkify <- function(x) {
+  x <- htmlEscape(x)
+  gsub("(https?://[^\\s]+?)(?=[.,;]?(\\s|$))", '<a href="\\1">\\1</a>', x, perl = TRUE)
+}
+
+row_html <- function(label, value, code = FALSE) {
+  if (is.na(value) || !nzchar(trimws(value))) return("")
+  value <- if (code) paste0("<code>", htmlEscape(value), "</code>") else linkify(value)
+  paste0('<div class="ds-row"><div class="ds-label">', label,
+         '</div><div class="ds-value">', value, '</div></div>')
+}
+
+term_card <- function(r) {
+  paste0(
+    '<div class="ds-card" id="', r$id, '">',
+    '<div class="ds-head"><span class="ds-term">', htmlEscape(r$term), '</span>',
+    '<span class="rr-tag">', if (isTRUE(r$required)) "Required" else "Optional", '</span></div>',
+    '<div class="ds-body">',
+    row_html("Definition", r$definition),
+    row_html("Examples", r$examples),
+    row_html("EXIF tag", r$exif, code = TRUE),
+    '</div></div>'
+  )
+}
+
+# index chips + cards for one table
+render_terms <- function(tb) {
+  sub <- filter(standard, table == tb)
+  raw_html(paste0(
+    '<div class="ds-index">',
+    paste0('<a class="rr-tag" href="#', sub$id, '">', htmlEscape(sub$term), '</a>', collapse = ""),
+    '</div>'
+  ))
+  raw_html(vapply(seq_len(nrow(sub)), function(i) term_card(sub[i, ]), character(1)))
+}
+```
+
+```{r}
+#| echo: false
+#| results: asis
+render_terms("Media")
+```

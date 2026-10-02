@@ -1,0 +1,31 @@
+---
+pagetitle: "Contribute"
+page-layout: article
+---
+
+# Contribute
+
+Reef Archive is an open repository of historical coral reef photographs, and anyone, anywhere in the world, is welcome to contribute. If you have reef images from pre-1990s (slides, prints, negatives or scans), we would love to hear from you.
+
+# Become an early contributor
+
+Reef Archive is currently in a pilot phase and is operating without dedicated funding, which limits our infrastructure and capacity. We are seeking support for the project's long-term sustainability, and the strongest case we can make to funders is a collection that shows what the archive can be. Early contributors are central to that: every image donated now helps demonstrate the value of the project.
+
+# How to contribute
+
+Our long-term goal is to develop semi-automated workflows for ingesting historical imagery. Until then, we work with contributors directly. To get started, email [**info@reefarchive.org**](mailto:info@reefarchive.org) and we will guide you through the process. We can help with every step, which is roughly:
+
+1. **Digitise** analogue images (slides, prints and negatives).
+2. **Prepare and link metadata** such as who took the photograph, where and when.
+3. **Review and conform** the metadata to our [**data standard**](../standard/index.qmd).
+4. **Archive** the images on [**Zenodo**](https://zenodo.org/communities/reefarchive)
+   and add them to the Reef Archive website.
+
+You don't need to have everything ready, and even partial information about
+an image is useful. Just get in touch.
+
+# Other ways to help
+
+If you don't have images to contribute but would like to support the project,
+whether through funding, collaboration or spreading the word, please
+[**get in touch**](mailto:info@reefarchive.org).
