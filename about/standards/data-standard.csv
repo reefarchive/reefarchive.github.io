@@ -7,24 +7,24 @@ Media,type,"The nature of the resource. Constraints: StillImage, MovingImage.","
 Media,bibliographicCitation,A bibliographic reference for the resource.,"Johnson, K. and Jones, L.A. (2026) Eileen Graham Collection, Discovery Bay, Jamaica (1966–1968). https://doi.org/10.5281/zenodo.22663465.",,TRUE
 Media,license,A legal document giving official permission to do something with the resource.,http://creativecommons.org/licenses/by/4.0/legalcode,Copyright,TRUE
 Media,rightsHolder,A person or organisation owning or managing rights over the resource.,Trustees of the Natural History Museum,Copyright,TRUE
-Media,capturedBy,Name or identifier of the person or organization that captured the media.,Eileen Graham,Artist,TRUE
-Media,digitisedBy,Name or identifier of the person or organization that digitized the media.,Kenneth Johnson,,TRUE
-Media,processedBy,Name or identifier of the person or organization that processed the media.,Lewis A. Jones,,TRUE
+Media,capturedBy,Name or identifier of the person or organisation that captured the media.,Eileen Graham,Artist,TRUE
+Media,digitisedBy,Name or identifier of the person or organisation that digitised the media.,Kenneth Johnson,,TRUE
+Media,processedBy,Name or identifier of the person or organisation that processed the media.,Lewis A. Jones,,TRUE
 Media,year,"The four-digit year in which the media was captured, according to the Common Era Calendar.",1984,DateTimeOriginal,TRUE
 Media,month,The integer month in which the media was captured.,6,DateTimeOriginal,FALSE
 Media,day,The integer day of the month in which the media was captured.,3,DateTimeOriginal,FALSE
 Media,habitat,A category or description of the habitat in which the media was captured.,"reef flat, reef edge, reef slope",GPSAreaInformation,FALSE
-Media,waterBody,The name of the water body in which the media was captured. Using a standard gazetters is considered best practice (e.g. marineregions.org).,The Caribbean Sea,GPSAreaInformation,FALSE
-Media,islandGroup,The name of the island group in which the media was captured. Using a standard gazetters is considered best practice (e.g. marineregions.org).,Greater Antilles,GPSAreaInformation,FALSE
-Media,island,The name of the island in which the media was captured. Using a standard gazetters is considered best practice (e.g. marineregions.org).,Jamaica,GPSAreaInformation,FALSE
+Media,waterBody,The name of the water body in which the media was captured.,The Caribbean Sea,GPSAreaInformation,FALSE
+Media,islandGroup,The name of the island group in which the media was captured.,Greater Antilles,GPSAreaInformation,FALSE
+Media,island,The name of the island in which the media was captured.,Jamaica,GPSAreaInformation,FALSE
 Media,country,The name of the country or major administrative unit in which the media was captured.,Jamaica,GPSAreaInformation,FALSE
 Media,countryCode,The standard code for the country in which the media was captured (ISO 3166-1-alpha-2).,JM,GPSAreaInformation,FALSE
 Media,stateProvince,"The name of the next smaller administrative region than country (state, province, canton, department, region, etc.) in which the media was captured.",,GPSAreaInformation,FALSE
 Media,county,"The full, unabbreviated name of the next smaller administrative region than stateProvince (county, shire, department, etc.) in which the media was captured.","Saint Ann Parish, Middlesex County",GPSAreaInformation,FALSE
 Media,municipality,"The full, unabbreviated name of the next smaller administrative region than county (city, municipality, etc.) in which the media was captured.",Discovery Bay,GPSAreaInformation,FALSE
 Media,locality,The specific description of the place.,Pinnacle 1 Sand Slope,GPSAreaInformation,FALSE
-Media,decimalLongitude,A geographic longitude (in decimal degrees) as per EPSG:4326 geodetic datum. Always reported in Eastings.,-121.1761111,GPSLongitude,TRUE
-Media,decimalLatitude,A geographic latitude (in decimal degrees) as per EPSG:4326 geodetic datum. Always reported in Northings.,-41.0983423,GPSLatitude,TRUE
+Media,decimalLongitude,A geographic longitude (in decimal degrees) as per EPSG:4326 geodetic datum.,-121.1761111,GPSLongitude,TRUE
+Media,decimalLatitude,A geographic latitude (in decimal degrees) as per EPSG:4326 geodetic datum.,-41.0983423,GPSLatitude,TRUE
 Media,georeferenceRemarks,"Comments or notes about the spatial description determination, explaining assumptions made or the protocol.","Coordinates inferred from local feature (buoy), precise to the nearest minute (0.01).",UserComment,FALSE
 Media,minimumDepthInMetres,The least depth within a range of depths in metres.,10,WaterDepth,FALSE
 Media,maximumDepthInMetres,The greatest depth within a range of depths in metres.,25,WaterDepth,FALSE

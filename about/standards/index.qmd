@@ -1,13 +1,13 @@
 ---
-pagetitle: "Standards"
+pagetitle: "Data Standards"
 page-layout: article
 ---
 
-# Data Standard
+# Data Standards
 
-This page serves as a reference for the metadata terms used by the Reef Archive to describe historical coral reef photographs. Each term lists its definition, examples, and where relevant, the EXIF tag it maps to in the media file, and is marked as required or optional.
+This page serves as a reference for the metadata terms used by the Reef Archive to describe historical coral reef photographs. Each term lists its definition, examples, is marked as required or optional, and where relevant, the EXIF tag it maps to in the media file.
 
-The terms are adapted from the [**Darwin Core standard**](https://www.tdwg.org/standards/dwc/) and the [**Camera Trap Data Package (CamTrap DP)**](https://camtrap-dp.tdwg.org), so that Reef Archive data can be shared with, and understood by, the wider biodiversity data community. Where a term follows Darwin Core or CamTrap DP, its meaning is the same; where the Reef Archive has added or modified a term, the definition on this page is the one that applies.
+The terms are adapted from the [**Darwin Core standard**](https://www.tdwg.org/standards/dwc/) and the [**Camera Trap Data Package (CamTrap DP)**](https://camtrap-dp.tdwg.org), so that Reef Archive data can be shared with, and understood by, the wider biodiversity data community. Where a term follows Darwin Core or CamTrap DP, its meaning is equivalent; where the Reef Archive has added or modified a term, the definition on this page is the one that applies.
 
 **Need help?** If something here is unclear, or you are unsure how to describe a media file, get in touch at [**info@reefarchive.org**](mailto:info@reefarchive.org) or open an issue on the
 [**Reef Archive GitHub repository**](https://github.com/reefarchive/reefarchive.github.io/issues).
