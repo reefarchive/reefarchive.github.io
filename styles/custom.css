@@ -234,6 +234,10 @@ a {
   .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 
+.quarto-listing-category-title {
+  margin-top: 2rem;   /* roughly lines up with the filter box */
+}
+
 /* ── Data standard ─────────────────────────────────────── */
 
 /* term index: chips that link to each card */
