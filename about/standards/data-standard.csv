@@ -1,6 +1,6 @@
 Table,Term,Definition,Example(s),EXIF Tag Mapping,Required
 Media,mediaID,A unique identifier for the media file. Concatenating collectionID and fileName is considered best practice.,10.5281/zenodo.22663465-IMG0001,ImageUniqueID,TRUE
-Media,fileName,"The name of the media file. Prefixing still images with ""IMG"" and and moving images with ""MOV"" is considered best practice.","IMG0001, MOV0001",OriginalRawFileName,TRUE
+Media,fileName,"The name of the media file. Prefixing still images with ""IMG"" and moving images with ""MOV"" is considered best practice.","IMG0001, MOV0001",OriginalRawFileName,TRUE
 Media,collectionID,A unique identifier for the collection. Using a stable Digital Object Identifier is considered best practice. ,10.5281/zenodo.22663465,,TRUE
 Media,collectionName,The name of the collection.,"Eileen Graham's Collection, Discovery Bay, Jamaica, (1966–1968).",ImageDescription,TRUE
 Media,type,"The nature of the resource. Constraints: StillImage, MovingImage.","StillImage, MovingImage",,TRUE
