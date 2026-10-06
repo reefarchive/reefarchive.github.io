@@ -15,7 +15,7 @@ website:
   open-graph:
     title: The Reef Archive
     description: An archive of historical coral reef photography
-    image: _img/hero.jpg
+    image: _img/hero.webp
     locale: en_GB
   
   navbar:
