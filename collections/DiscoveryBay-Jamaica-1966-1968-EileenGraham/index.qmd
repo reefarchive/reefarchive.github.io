@@ -1,5 +1,5 @@
 ---
-title: "The Eileen Graham Collection (Discovery Bay, Jamaica, 1966 to 1968)"
+title: "The Eileen Graham Collection, Discovery Bay, Jamaica, 1966 to 1968"
 subtitle: "Download: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22663464.svg)](https://doi.org/10.5281/zenodo.22663464)"
 description: "A set of underwater photographs from Discovery Bay, Jamaica (1966 to 1968), taken by Eileen Graham. The photographs capture the north coast reefs in a state of vibrancy now largely lost. Trustees of the Natural History Museum, [**CC BY 4.0**](http://creativecommons.org/licenses/by/4.0/legalcode)."
 image: "media/IMG0058.webp"   # thumbnail shown in the listing grid
