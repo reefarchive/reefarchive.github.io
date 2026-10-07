@@ -264,7 +264,10 @@ a {
 }
 
 /* cards: navy header bar, rows underneath */
-.ds-card { margin: 0 0 1.25rem 0; }
+.ds-card { 
+  margin: 0 0 1.25rem 0; 
+  scroll-margin-top: 80px;
+}
 
 .ds-head {
   display: flex;
