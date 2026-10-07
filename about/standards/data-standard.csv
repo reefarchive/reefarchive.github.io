@@ -13,21 +13,23 @@ Media,processedBy,Name or identifier of the person or organisation that processe
 Media,year,"The four-digit year in which the media was captured, according to the Common Era Calendar.",1984,DateTimeOriginal,TRUE
 Media,month,The integer month in which the media was captured.,6,DateTimeOriginal,FALSE
 Media,day,The integer day of the month in which the media was captured.,3,DateTimeOriginal,FALSE
+Media,time,The time at which the media was recorded. Formatted as an ISO 8601 string with UTC timezone designator (hh:mm:ssZ).,11:31:01Z,DateTimeOriginal,FALSE
 Media,habitat,A category or description of the habitat in which the media was captured.,"reef flat, reef edge, reef slope",GPSAreaInformation,FALSE
 Media,waterBody,The name of the water body in which the media was captured.,The Caribbean Sea,GPSAreaInformation,FALSE
 Media,islandGroup,The name of the island group in which the media was captured.,Greater Antilles,GPSAreaInformation,FALSE
 Media,island,The name of the island in which the media was captured.,Jamaica,GPSAreaInformation,FALSE
 Media,country,The name of the country or major administrative unit in which the media was captured.,Jamaica,GPSAreaInformation,FALSE
 Media,countryCode,The standard code for the country in which the media was captured (ISO 3166-1-alpha-2).,JM,GPSAreaInformation,FALSE
-Media,stateProvince,"The name of the next smaller administrative region than country (state, province, canton, department, region, etc.) in which the media was captured.",,GPSAreaInformation,FALSE
-Media,county,"The full, unabbreviated name of the next smaller administrative region than stateProvince (county, shire, department, etc.) in which the media was captured.","Saint Ann Parish, Middlesex County",GPSAreaInformation,FALSE
+Media,stateProvince,"The name of the next smaller administrative region than country (state, province, canton, department, region, etc.) in which the media was captured.",Florida,GPSAreaInformation,FALSE
+Media,county,"The full, unabbreviated name of the next smaller administrative region than stateProvince (county, shire, department, etc.) in which the media was captured.",Middlesex County,GPSAreaInformation,FALSE
 Media,municipality,"The full, unabbreviated name of the next smaller administrative region than county (city, municipality, etc.) in which the media was captured.",Discovery Bay,GPSAreaInformation,FALSE
-Media,locality,The specific description of the place.,Pinnacle 1 Sand Slope,GPSAreaInformation,FALSE
+Media,locality,"The specific description of the place, such as dive site.","Spur reef on fore-reef terrace, Upper Buoy Reef area",GPSAreaInformation,FALSE
 Media,decimalLongitude,A geographic longitude (in decimal degrees) as per EPSG:4326 geodetic datum.,-121.1761111,GPSLongitude,TRUE
 Media,decimalLatitude,A geographic latitude (in decimal degrees) as per EPSG:4326 geodetic datum.,-41.0983423,GPSLatitude,TRUE
 Media,georeferenceRemarks,"Comments or notes about the spatial description determination, explaining assumptions made or the protocol.","Coordinates inferred from local feature (buoy), precise to the nearest minute (0.01).",UserComment,FALSE
 Media,minimumDepthInMetres,The least depth within a range of depths in metres.,10,WaterDepth,FALSE
 Media,maximumDepthInMetres,The greatest depth within a range of depths in metres.,25,WaterDepth,FALSE
+Media,depthRemarks,"Comments or notes about the depth description determination, explaining assumptions made or the protocol.","Depth range inferred from entire site dive log, no media specific depth available.",UserComment,FALSE
 Media,mediaComments,Any comments or notes about the media file.,Media file corrupted.,UserComment,FALSE
 Media,modified,Date on which the resource was changed. Formatted as an ISO 8601 string (YYYY-MM-DD).,1969-02-12,,TRUE
 Observation,observationID,A unique identifier of the observation.,58275b54-059f-4f3f-afa4-d501dfc3b470,,TRUE
