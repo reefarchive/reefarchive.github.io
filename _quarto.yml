@@ -1,7 +1,8 @@
 project:
   type: website
   output-dir: _site
-  post-render: fix_index_links.R
+  pre-render: compile-data.R
+  post-render: fix-index-links.R
 
 resources:
   - _img/*

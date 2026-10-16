@@ -9,7 +9,7 @@
 # Load libraries --------------------------------------------------------
 library(dplyr)
 library(stringr)
-library(tidyverse)
+library(purrr)
 
 # Process data ----------------------------------------------------------
 collections <- list.dirs(
