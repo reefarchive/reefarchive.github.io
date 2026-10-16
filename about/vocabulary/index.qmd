@@ -1,9 +1,9 @@
 ---
-pagetitle: "Data Standards"
+pagetitle: "Vocabulary"
 page-layout: article
 ---
 
-# Data Standards
+# Vocabulary
 
 This page serves as a reference for the metadata terms used by the Reef Archive to describe historical coral reef photographs. Each term lists its definition, examples, is marked as required or optional, and where relevant, the EXIF tag it maps to in the media file.
 
@@ -25,7 +25,7 @@ The terms are adapted from the [**Darwin Core standard**](https://www.tdwg.org/s
 library(dplyr)
 library(htmltools)
 
-standard <- read.csv("data-standard.csv") |>
+standard <- read.csv("https://raw.githubusercontent.com/reefarchive/datapackage/refs/heads/main/vocabulary/term_versions.csv") |>
   rename(table = 1, term = 2, definition = 3, examples = 4, exif = 5, required = 6) |>
   filter(!is.na(term)) |>
   mutate(id = paste0(tolower(table), "-", term))
