@@ -1,2 +1,3 @@
-# reef-archive.github.io
+# reefarchive.github.io
+
 The Reef Archive Website

@@ -2,11 +2,11 @@
 pagetitle: "Collections"
 listing:
   type: grid
-  grid-columns: 3
+  grid-columns: 4
   image-height: "220px"
   fields: [image, title, date]
   sort: "date desc"
-  categories: true
+  categories: false
   filter-ui: true
 page-layout: full
 ---
