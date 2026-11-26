@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://reefarchive.org/collections/RADP0001/index.html</loc>
-    <lastmod>2026-11-25T18:19:26.363Z</lastmod>
-  </url>
-  <url>
-    <loc>https://reefarchive.org/atlas/index.html</loc>
-    <lastmod>2026-11-25T18:19:26.363Z</lastmod>
-  </url>
-  <url>
-    <loc>https://reefarchive.org/about/about/index.html</loc>
-    <lastmod>2026-11-25T18:19:26.363Z</lastmod>
-  </url>
-  <url>
     <loc>https://reefarchive.org/about/contribute/index.html</loc>
-    <lastmod>2026-11-25T18:19:26.363Z</lastmod>
+    <lastmod>2026-11-26T17:59:55.032Z</lastmod>
   </url>
   <url>
     <loc>https://reefarchive.org/about/vocabulary/index.html</loc>
-    <lastmod>2026-11-25T18:19:26.363Z</lastmod>
+    <lastmod>2026-11-26T17:59:55.032Z</lastmod>
   </url>
   <url>
     <loc>https://reefarchive.org/index.html</loc>
-    <lastmod>2026-11-25T18:19:26.542Z</lastmod>
+    <lastmod>2026-11-26T17:59:55.160Z</lastmod>
   </url>
   <url>
     <loc>https://reefarchive.org/collections/index.html</loc>
-    <lastmod>2026-11-25T18:19:26.541Z</lastmod>
+    <lastmod>2026-11-26T17:59:55.159Z</lastmod>
+  </url>
+  <url>
+    <loc>https://reefarchive.org/collections/RADP0001/index.html</loc>
+    <lastmod>2026-11-26T17:59:55.033Z</lastmod>
+  </url>
+  <url>
+    <loc>https://reefarchive.org/atlas/index.html</loc>
+    <lastmod>2026-11-26T17:59:55.032Z</lastmod>
+  </url>
+  <url>
+    <loc>https://reefarchive.org/about/about/index.html</loc>
+    <lastmod>2026-11-26T17:59:55.032Z</lastmod>
   </url>
 </urlset>
